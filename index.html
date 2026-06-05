@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UniMart — Everything is Here | Skincare, Fashion & More</title>
+<title>Olinbuy — India's Best Fashion & Skincare Store</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -66,23 +66,48 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
 /* ─── MAIN ─── */
 .main-wrap{max-width:1280px;margin:0 auto;padding:16px 16px}
 
+/* ─── ANNOUNCEMENT BAR ─── */
+.announce-bar{background:linear-gradient(90deg,#4a7c3f,#5a9e4a,#4a7c3f);color:#fff;text-align:center;padding:6px 0;font-size:11px;font-weight:700;letter-spacing:1.5px;overflow:hidden;position:relative}
+.announce-inner{display:inline-flex;gap:48px;animation:marqueeBar 22s linear infinite;white-space:nowrap;align-items:center}
+.announce-inner span{display:flex;align-items:center;gap:6px}
+@keyframes marqueeBar{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 /* ─── HERO BANNER ─── */
-.hero-banner{background:linear-gradient(125deg,#0a1828 0%,#0f2444 45%,#1a3a6b 100%);border-radius:10px;overflow:hidden;position:relative;padding:40px 48px;color:#fff;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;min-height:210px;border:1px solid rgba(201,168,76,.18);box-shadow:0 8px 32px rgba(10,25,60,.3)}
-.hero-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(201,168,76,.08) 0%,transparent 65%),radial-gradient(ellipse 30% 50% at 10% 80%,rgba(30,77,158,.3) 0%,transparent 60%);pointer-events:none}
-.hero-banner::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.4),transparent)}
-.hero-left{}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.15);color:#e8d5a3;border:1px solid rgba(201,168,76,.35);font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
-.hero-left h1{font-family:'Poppins',sans-serif;font-size:clamp(24px,3.2vw,38px);font-weight:700;line-height:1.2;margin-bottom:10px;letter-spacing:-.3px}
-.hero-left h1 .gold{color:#e8c96d}
-.hero-left p{font-size:14px;opacity:.78;margin-bottom:22px;max-width:480px;line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.2px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-white{background:linear-gradient(135deg,#fff,#f5f8ff);color:var(--primary-dark);border:none;padding:11px 26px;border-radius:var(--radius);font-weight:800;font-size:13px;font-family:'Nunito',sans-serif;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.2)}
-.btn-ghost{background:transparent;color:#e8d5a3;border:1.5px solid rgba(201,168,76,.5);padding:11px 26px;border-radius:var(--radius);font-weight:700;font-size:13px;font-family:'Nunito',sans-serif;transition:all .2s}
-.btn-ghost:hover{border-color:#e8d5a3;background:rgba(201,168,76,.1);transform:translateY(-2px)}
-.hero-right{position:relative;z-index:1;text-align:center;flex-shrink:0}
-.hero-emojis{font-size:80px;line-height:1;filter:drop-shadow(0 8px 24px rgba(0,0,0,.3))}
-.hero-offer-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:700;margin-top:10px;color:#e8d5a3;letter-spacing:.5px}
+.hero-banner{border-radius:12px;overflow:hidden;position:relative;margin-bottom:16px;height:220px}
+.hero-slides{position:relative;width:100%;height:220px;overflow:hidden;border-radius:12px}
+.hero-slide{position:absolute;inset:0;display:flex;align-items:center;padding:28px 24px;opacity:0;transition:opacity .6s ease;pointer-events:none;height:220px;overflow:hidden}
+.hero-slide.active{opacity:1;pointer-events:all}
+.hero-slide-1{background:linear-gradient(125deg,#0a1828 0%,#0f2444 50%,#1e3a6e 100%)}
+.hero-slide-2{background:linear-gradient(125deg,#1a0533 0%,#3d0d6e 50%,#6b21a8 100%)}
+.hero-slide-3{background:linear-gradient(125deg,#0d2f0d 0%,#14532d 50%,#166534 100%)}
+.hero-slide-4{background:linear-gradient(125deg,#2d0a0a 0%,#7f1d1d 50%,#991b1b 100%)}
+.slide-left{z-index:2;max-width:68%;display:flex;flex-direction:column;gap:0}
+.slide-tag{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;padding:3px 10px;border-radius:20px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);background:rgba(255,255,255,.1);width:fit-content}
+.slide-title{font-family:'Poppins',sans-serif;font-size:24px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:6px;letter-spacing:-.3px}
+.slide-title .hl{color:#fde68a}
+.slide-title .hl2{color:#f9a8d4}
+.slide-title .hl3{color:#86efac}
+.slide-title .hl4{color:#fca5a5}
+.slide-sub{font-size:11px;color:rgba(255,255,255,.72);margin-bottom:14px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.slide-btns{display:flex;gap:8px;flex-wrap:nowrap}
+.slide-btn-primary{background:#fff;color:#1a1a1a;border:none;padding:8px 16px;border-radius:6px;font-size:11px;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;transition:all .2s;white-space:nowrap}
+.slide-btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.slide-btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:8px 14px;border-radius:6px;font-size:11px;font-weight:700;font-family:'Nunito',sans-serif;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center}
+.slide-badge{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.3);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 12px;text-align:center;z-index:2}
+.slide-badge-num{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:#fde68a;line-height:1;display:block}
+.slide-badge-text{font-size:8px;color:rgba(255,255,255,.8);letter-spacing:1.5px;text-transform:uppercase;font-weight:700}
+.slide-emoji-wrap{position:absolute;right:20px;bottom:0;font-size:72px;opacity:.25;z-index:1;pointer-events:none;line-height:1}
+/* Dots */
+.hero-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:10}
+.hero-dot{width:5px;height:5px;border-radius:3px;background:rgba(255,255,255,.35);cursor:pointer;transition:all .3s}
+.hero-dot.active{width:16px;background:#fff}
+/* Arrows */
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);backdrop-filter:blur(4px);border:none;color:#fff;width:28px;height:28px;border-radius:50%;font-size:16px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background .2s;line-height:1}
+.hero-arrow:hover{background:rgba(255,255,255,.3)}
+.hero-arrow-left{left:10px}
+.hero-arrow-right{right:10px}
+.btn-white{background:linear-gradient(135deg,#fff,#f5f8ff);color:var(--primary-dark);border:none;padding:11px 26px;border-radius:var(--radius);font-weight:800;font-size:13px;font-family:'Nunito',sans-serif;transition:all .2s}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:11px 26px;border-radius:var(--radius);font-weight:700;font-size:13px;font-family:'Nunito',sans-serif;transition:all .2s}
 
 /* ─── TRUST BADGES ─── */
 .trust-strip{display:flex;align-items:center;justify-content:space-around;background:#fff;border-radius:10px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:18px 12px;border:1px solid #eef2ff;gap:8px;flex-wrap:nowrap;overflow-x:auto}
@@ -308,10 +333,12 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
   .tb-btn span:not(.badge){display:none}
   .navstrip{display:none;top:54px}
   .main-wrap{padding:10px}
-  .hero-banner{padding:24px 20px;min-height:auto}
-  .hero-right{display:none}
-  .hero-left h1{font-size:22px}
-  .hero-left p{font-size:13px;margin-bottom:16px}
+  .hero-banner{height:200px}
+  .hero-slides{height:200px}
+  .hero-slide{height:200px;padding:20px 16px}
+  .slide-emoji-wrap{font-size:56px;opacity:.15}
+  .slide-title{font-size:20px}
+  .slide-sub{font-size:10px;-webkit-line-clamp:2}
   .products-grid{grid-template-columns:repeat(2,1fr);gap:10px}
   .trust-strip{grid-template-columns:1fr 1fr;font-size:12px}
   .reviews-grid{grid-template-columns:1fr}
@@ -332,8 +359,8 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
     </div>
     <a href="#" class="tb-logo">
       <div>
-        <div class="logo-text">Uni<span>Mart</span></div>
-        <div class="logo-sub">Everything is Here</div>
+        <div class="logo-text">Olin<span>buy</span></div>
+        <div class="logo-sub">India's Best Store</div>
       </div>
     </a>
   </div>
@@ -347,7 +374,7 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
   </div>
 
   <div class="tb-right">
-    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="tb-wa">
+    <a href="https://wa.me/919690914734" target="_blank" class="tb-wa">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span>WhatsApp Order</span>
     </a>
@@ -375,7 +402,7 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
 <div class="mob-nav-overlay" id="mobNavOverlay" onclick="toggleMobNav()"></div>
 <div class="mob-nav-drawer" id="mobNavDrawer">
   <div class="mob-nav-head">
-    <h3>UniMart Menu</h3>
+    <h3>Olinbuy Menu</h3>
     <button class="mob-close" onclick="toggleMobNav()">✕</button>
   </div>
   <ul class="mob-nav-list">
@@ -385,7 +412,7 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
     <li><a href="#" onclick="filterByNav(null,'women');toggleMobNav()"><span class="nav-em">👗</span> Women's Fashion</a></li>
     <li><a href="#" onclick="filterByNav(null,'men');toggleMobNav()"><span class="nav-em">👔</span> Men's Fashion</a></li>
     <li><a href="#" onclick="filterByNav(null,'wholesale');toggleMobNav()"><span class="nav-em">📦</span> Wholesale</a></li>
-    <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank"><span class="nav-em">📲</span> WhatsApp Order</a></li>
+    <li><a href="https://wa.me/919690914734" target="_blank"><span class="nav-em">📲</span> WhatsApp Order</a></li>
   </ul>
 </div>
 
@@ -438,20 +465,105 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
     </div>
   </div>
 
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    <div class="announce-inner">
+      <span>🚚 FREE DELIVERY PAN-INDIA ON ORDERS ABOVE ₹999</span>
+      <span>✨ NEW ARRIVALS — SKINCARE, FASHION & MORE</span>
+      <span>📦 WHOLESALE AVAILABLE — MOQ ₹2000</span>
+      <span>💰 COD AVAILABLE ACROSS INDIA</span>
+      <span>🚚 FREE DELIVERY PAN-INDIA ON ORDERS ABOVE ₹999</span>
+      <span>✨ NEW ARRIVALS — SKINCARE, FASHION & MORE</span>
+      <span>📦 WHOLESALE AVAILABLE — MOQ ₹2000</span>
+      <span>💰 COD AVAILABLE ACROSS INDIA</span>
+    </div>
+  </div>
+
   <!-- HERO BANNER -->
   <div class="hero-banner" id="heroBanner">
-    <div class="hero-left">
-      <div class="hero-tag">✦ New Arrivals 2025</div>
-      <h1>Premium Style, Skincare &<br><span class="gold">Fashion</span> — Sab Yahan!</h1>
-      <p>Mohali's most trusted store — Authentic products, best prices, delivered to your door.</p>
-      <div class="hero-btns">
-        <button class="btn-white" onclick="scrollToProducts()">Shop Now →</button>
-        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn-ghost">📲 WhatsApp Order</a>
+    <div class="hero-slides" id="heroSlides">
+
+      <!-- Slide 1 — Skincare -->
+      <div class="hero-slide hero-slide-1 active">
+        <div class="slide-left">
+          <div class="slide-tag">✦ New Arrivals 2025</div>
+          <div class="slide-title">Glowing Skin,<br><span class="hl">Confident You</span></div>
+          <div class="slide-sub">Premium skincare — serums, moisturizers, SPF & more. Authentic products, pan-India delivery.</div>
+          <div class="slide-btns">
+            <button class="slide-btn-primary" onclick="setCatCircle(null,'skincare');scrollToProducts()">Shop Skincare →</button>
+            <a href="https://wa.me/919690914734" target="_blank" class="slide-btn-outline">📲 Order Now</a>
+          </div>
+        </div>
+        <div class="slide-badge">
+          <span class="slide-badge-num">50%</span>
+          <span class="slide-badge-text">Upto Off</span>
+        </div>
+        <div class="slide-emoji-wrap">✨</div>
       </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-emojis">🛍️</div>
-      <div class="hero-offer-pill">✨ Free Delivery in Mohali</div>
+
+      <!-- Slide 2 — Cosmetics -->
+      <div class="hero-slide hero-slide-2">
+        <div class="slide-left">
+          <div class="slide-tag">💄 Beauty Collection</div>
+          <div class="slide-title">Bold Looks,<br><span class="hl2">Real You</span></div>
+          <div class="slide-sub">Lipsticks, foundations, eye shadows & more. Long-lasting formulas at unbeatable prices.</div>
+          <div class="slide-btns">
+            <button class="slide-btn-primary" onclick="setCatCircle(null,'cosmetics');scrollToProducts()">Shop Cosmetics →</button>
+            <a href="https://wa.me/919690914734" target="_blank" class="slide-btn-outline">📲 Order Now</a>
+          </div>
+        </div>
+        <div class="slide-badge">
+          <span class="slide-badge-num">42%</span>
+          <span class="slide-badge-text">Upto Off</span>
+        </div>
+        <div class="slide-emoji-wrap">💄</div>
+      </div>
+
+      <!-- Slide 3 — Fashion -->
+      <div class="hero-slide hero-slide-3">
+        <div class="slide-left">
+          <div class="slide-tag">👗 Fashion 2025</div>
+          <div class="slide-title">Dress to<br><span class="hl3">Impress</span></div>
+          <div class="slide-sub">Men's & Women's fashion — kurtis, shirts, co-ord sets & more. Latest trends, best prices.</div>
+          <div class="slide-btns">
+            <button class="slide-btn-primary" onclick="setCatCircle(null,'women');scrollToProducts()">Shop Fashion →</button>
+            <a href="https://wa.me/919690914734" target="_blank" class="slide-btn-outline">📲 Order Now</a>
+          </div>
+        </div>
+        <div class="slide-badge">
+          <span class="slide-badge-num">39%</span>
+          <span class="slide-badge-text">Upto Off</span>
+        </div>
+        <div class="slide-emoji-wrap">👗</div>
+      </div>
+
+      <!-- Slide 4 — Wholesale -->
+      <div class="hero-slide hero-slide-4">
+        <div class="slide-left">
+          <div class="slide-tag">📦 Wholesale Program</div>
+          <div class="slide-title">Grow Your<br><span class="hl4">Business</span></div>
+          <div class="slide-sub">Bulk orders at best rates. MOQ ₹2,000 se shuru. Retailers, resellers & boutique owners welcome.</div>
+          <div class="slide-btns">
+            <button class="slide-btn-primary" onclick="setCatCircle(null,'wholesale');scrollToProducts()">Wholesale Inquiry →</button>
+            <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%27m%20interested%20in%20Wholesale." target="_blank" class="slide-btn-outline">📲 WhatsApp</a>
+          </div>
+        </div>
+        <div class="slide-badge">
+          <span class="slide-badge-num">30%</span>
+          <span class="slide-badge-text">Bulk Off</span>
+        </div>
+        <div class="slide-emoji-wrap">📦</div>
+      </div>
+
+      <!-- Navigation -->
+      <button class="hero-arrow hero-arrow-left" onclick="changeSlide(-1)">‹</button>
+      <button class="hero-arrow hero-arrow-right" onclick="changeSlide(1)">›</button>
+      <div class="hero-dots" id="heroDots">
+        <div class="hero-dot active" onclick="goToSlide(0)"></div>
+        <div class="hero-dot" onclick="goToSlide(1)"></div>
+        <div class="hero-dot" onclick="goToSlide(2)"></div>
+        <div class="hero-dot" onclick="goToSlide(3)"></div>
+      </div>
     </div>
   </div>
 
@@ -459,7 +571,7 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
   <div class="trust-strip">
     <div class="trust-item">
       <div class="trust-icon-wrap ti-blue">🚚</div>
-      <div class="trust-info"><strong>Free Delivery</strong><span>Mohali same-day</span></div>
+      <div class="trust-info"><strong>Free Delivery</strong><span>Same-day delivery</span></div>
     </div>
     <div class="trust-item">
       <div class="trust-icon-wrap ti-green">✅</div>
@@ -542,7 +654,7 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
         <span class="ws-perk">✅ Punjab-wide Delivery</span>
         <span class="ws-perk">✅ Dedicated Support</span>
       </div>
-      <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20UniMart!%20I%27m%20interested%20in%20your%20Wholesale%20Program." target="_blank" class="btn-ws">
+      <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%27m%20interested%20in%20your%20Wholesale%20Program." target="_blank" class="btn-ws">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp pe Wholesale Inquiry Karo
       </a>
@@ -602,9 +714,9 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
 <footer class="footer">
   <div class="footer-top">
     <div class="foot-brand">
-      <div class="foot-logo">🛍️ UniMart</div>
-      <p>Shahi Majra, Mohali mein located ek trusted fashion & beauty store. Skincare, cosmetics, men's & women's fashion aur wholesale — sab kuch ek jagah. Authentic products, best prices.</p>
-      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="foot-wa">
+      <div class="foot-logo">🛍️ Olinbuy</div>
+      <p>India ka trusted online fashion & beauty store. Skincare, cosmetics, men's & women's fashion aur wholesale — sab kuch ek jagah. Pan-India delivery, best prices, Mohali se operate karta hai.</p>
+      <a href="https://wa.me/919690914734" target="_blank" class="foot-wa">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Order on WhatsApp
       </a>
@@ -634,8 +746,8 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
     <div class="foot-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="#">📍 Shahi Majra, Mohali, Punjab</a></li>
-        <li><a href="https://wa.me/91XXXXXXXXXX">📲 +91 XXXXXXXXXX (WhatsApp)</a></li>
+        <li><a href="#">📍 Shahi Majra, Mohali, Punjab (Pan-India Delivery)</a></li>
+        <li><a href="https://wa.me/919690914734">📲 +91 9690914734 (WhatsApp)</a></li>
         <li><a href="#">🕐 Mon–Sat: 10am–8pm</a></li>
         <li><a href="#">🕐 Sunday: 11am–6pm</a></li>
         <li><a href="#">💳 COD Available</a></li>
@@ -643,8 +755,8 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 UniMart — All rights reserved.</span>
-    <span>Made with ❤️ in Mohali, Punjab 🇮🇳</span>
+    <span>© 2025 Olinbuy — All rights reserved.</span>
+    <span>Pan-India Delivery | Based in Mohali, Punjab 🇮🇳</span>
   </div>
 </footer>
 
@@ -667,7 +779,7 @@ button{cursor:pointer;font-family:'Nunito',sans-serif}
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp pe Order Karo
     </button>
-    <p class="cart-note">💰 COD Available &nbsp;•&nbsp; 🚚 Free Delivery in Mohali</p>
+    <p class="cart-note">💰 COD Available &nbsp;•&nbsp; 🚚 Free Delivery across India</p>
   </div>
 </div>
 
@@ -867,14 +979,14 @@ function checkoutWA() {
   if(!cart.length) return;
   const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
   const lines = cart.map(i=>`• ${i.name} ×${i.qty} = ₹${(i.price*i.qty).toLocaleString('en-IN')}`).join('\n');
-  const msg = `Hello UniMart! 🛍️\n\nMera Order:\n${lines}\n\n*Total: ₹${total.toLocaleString('en-IN')}*\n\nPlease confirm karein. COD chahiye.`;
-  window.open('https://wa.me/91XXXXXXXXXX?text='+encodeURIComponent(msg),'_blank');
+  const msg = `Hello Olinbuy! 🛍️\n\nMera Order:\n${lines}\n\n*Total: ₹${total.toLocaleString('en-IN')}*\n\nPlease confirm karein. COD chahiye.`;
+  window.open('https://wa.me/919690914734?text='+encodeURIComponent(msg),'_blank');
 }
 
 function orderNow(id) {
   const p = PRODUCTS.find(x=>x.id===id);
-  const msg = `Hello UniMart! 🛍️\n\nMujhe ye product chahiye:\n*${p.name}*\nPrice: ₹${p.price}\n\nPlease confirm karein.`;
-  window.open('https://wa.me/91XXXXXXXXXX?text='+encodeURIComponent(msg),'_blank');
+  const msg = `Hello Olinbuy! 🛍️\n\nMujhe ye product chahiye:\n*${p.name}*\nPrice: ₹${p.price}\n\nPlease confirm karein.`;
+  window.open('https://wa.me/919690914734?text='+encodeURIComponent(msg),'_blank');
 }
 
 function wishlist(id) {
@@ -904,6 +1016,35 @@ function showToast(msg,type=''){
   clearTimeout(t._tid);
   t._tid=setTimeout(()=>t.classList.remove('show'),3000);
 }
+
+// ══════════════════════════════════════
+// HERO SLIDER
+// ══════════════════════════════════════
+let currentSlide = 0;
+const totalSlides = 4;
+let slideTimer;
+
+function goToSlide(n) {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = (n + totalSlides) % totalSlides;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+function changeSlide(dir) {
+  clearInterval(slideTimer);
+  goToSlide(currentSlide + dir);
+  startSliderAuto();
+}
+
+function startSliderAuto() {
+  slideTimer = setInterval(() => goToSlide(currentSlide + 1), 4000);
+}
+
+startSliderAuto();
 
 // ══════════════════════════════════════
 // INIT
