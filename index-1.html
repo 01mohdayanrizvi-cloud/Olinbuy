@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olinbuy — India's Best Fashion & Skincare Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:#f4f4f4;color:#1a1a1a;font-size:14px}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+button{cursor:pointer;font-family:'Nunito',sans-serif}
+
+:root{
+  --primary:#1a3a6b;
+  --primary-mid:#1e4d9e;
+  --primary-bright:#2563eb;
+  --primary-dark:#0f2444;
+  --primary-light:#e8f0fe;
+  --secondary:#ff6161;
+  --orange:#fb641b;
+  --green:#26a541;
+  --yellow:#ffd700;
+  --gold:#c9a84c;
+  --text:#212121;
+  --text2:#555;
+  --text3:#888;
+  --border:#e0e0e0;
+  --bg:#f4f4f4;
+  --white:#ffffff;
+  --header-bg:linear-gradient(135deg,#0f2444 0%,#1a3a6b 40%,#1e4d9e 100%);
+  --shadow:0 2px 12px rgba(0,0,0,0.1);
+  --shadow-hover:0 8px 24px rgba(0,0,0,0.15);
+  --radius:6px;
+}
+
+/* ─── TOPBAR ─── */
+.topbar{background:var(--header-bg);color:#fff;padding:0 28px;height:62px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:900;box-shadow:0 4px 24px rgba(10,25,60,.5);border-bottom:1px solid rgba(201,168,76,.3)}
+.tb-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.tb-logo .logo-text{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:1px;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.2)}
+.tb-logo .logo-text span{color:var(--gold)}
+.tb-logo .logo-sub{font-size:9px;color:rgba(201,168,76,.85);letter-spacing:2.5px;text-transform:uppercase;margin-top:2px;font-weight:600}
+.tb-search{flex:1;max-width:560px;display:flex;align-items:center;background:rgba(255,255,255,.96);border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.2);border:1px solid rgba(201,168,76,.2)}
+.tb-search input{flex:1;border:none;outline:none;padding:10px 16px;font-size:14px;color:var(--text);font-family:'Nunito',sans-serif;background:transparent}
+.tb-search input::placeholder{color:#aaa}
+.tb-search button{background:linear-gradient(135deg,#1a3a6b,#1e4d9e);border:none;padding:10px 20px;color:#fff;font-size:13px;font-weight:700;letter-spacing:.5px;transition:opacity .2s;white-space:nowrap;border-left:1px solid rgba(201,168,76,.3)}
+.tb-search button:hover{opacity:.85}
+.tb-search button svg{vertical-align:middle}
+.tb-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.tb-btn{display:flex;align-items:center;gap:6px;color:#fff;background:rgba(255,255,255,.12);border:none;padding:8px 14px;border-radius:var(--radius);font-size:13px;font-weight:600;transition:background .2s;white-space:nowrap}
+.tb-btn:hover{background:rgba(255,255,255,.22)}
+.tb-btn svg{flex-shrink:0}
+.tb-btn .badge{background:#ff6161;color:#fff;font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;padding:0 4px}
+.tb-wa{background:#25D366;border:none;padding:8px 14px;border-radius:var(--radius);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;transition:background .2s}
+.tb-wa:hover{background:#1da854}
+
+/* ─── NAV STRIP ─── */
+.navstrip{background:linear-gradient(180deg,#e8f4fd 0%,#dbeeff 100%);border-bottom:1px solid #b8d9f5;padding:0 24px;display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none;box-shadow:0 2px 8px rgba(30,77,158,.08);position:sticky;top:62px;z-index:800}
+.navstrip::-webkit-scrollbar{display:none}
+.nav-item{display:flex;flex-direction:row;align-items:center;gap:6px;padding:12px 18px;font-size:13px;font-weight:700;color:#2a5a9a;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;cursor:pointer;letter-spacing:.2px}
+.nav-item:hover,.nav-item.active{color:var(--primary-dark);border-bottom-color:var(--primary-dark);background:rgba(30,77,158,.06)}
+.nav-item .nav-emoji{font-size:15px}
+
+/* ─── MAIN ─── */
+.main-wrap{max-width:1280px;margin:0 auto;padding:16px 16px}
+
+/* ─── ANNOUNCEMENT BAR ─── */
+.announce-bar{background:linear-gradient(90deg,#4a7c3f,#5a9e4a,#4a7c3f);color:#fff;text-align:center;padding:6px 0;font-size:11px;font-weight:700;letter-spacing:1.5px;overflow:hidden;position:relative}
+.announce-inner{display:inline-flex;gap:48px;animation:marqueeBar 22s linear infinite;white-space:nowrap;align-items:center}
+.announce-inner span{display:flex;align-items:center;gap:6px}
+@keyframes marqueeBar{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── HERO BANNER ─── */
+.hero-banner{border-radius:12px;overflow:hidden;position:relative;margin-bottom:16px;height:220px}
+.hero-slides{position:relative;width:100%;height:220px;overflow:hidden;border-radius:12px}
+.hero-slide{position:absolute;inset:0;display:flex;align-items:center;padding:28px 24px;opacity:0;transition:opacity .6s ease;pointer-events:none;height:220px;overflow:hidden}
+.hero-slide.active{opacity:1;pointer-events:all}
+.hero-slide-1{background:linear-gradient(125deg,#0a1828 0%,#0f2444 50%,#1e3a6e 100%)}
+.hero-slide-2{background:linear-gradient(125deg,#1a0533 0%,#3d0d6e 50%,#6b21a8 100%)}
+.hero-slide-3{background:linear-gradient(125deg,#0d2f0d 0%,#14532d 50%,#166534 100%)}
+.hero-slide-4{background:linear-gradient(125deg,#2d0a0a 0%,#7f1d1d 50%,#991b1b 100%)}
+.slide-left{z-index:2;max-width:68%;display:flex;flex-direction:column;gap:0}
+.slide-tag{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;padding:3px 10px;border-radius:20px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);background:rgba(255,255,255,.1);width:fit-content}
+.slide-title{font-family:'Poppins',sans-serif;font-size:24px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:6px;letter-spacing:-.3px}
+.slide-title .hl{color:#fde68a}
+.slide-title .hl2{color:#f9a8d4}
+.slide-title .hl3{color:#86efac}
+.slide-title .hl4{color:#fca5a5}
+.slide-sub{font-size:11px;color:rgba(255,255,255,.72);margin-bottom:14px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.slide-btns{display:flex;gap:8px;flex-wrap:nowrap}
+.slide-btn-primary{background:#fff;color:#1a1a1a;border:none;padding:8px 16px;border-radius:6px;font-size:11px;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;transition:all .2s;white-space:nowrap}
+.slide-btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.slide-btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:8px 14px;border-radius:6px;font-size:11px;font-weight:700;font-family:'Nunito',sans-serif;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center}
+.slide-badge{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.3);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 12px;text-align:center;z-index:2}
+.slide-badge-num{font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:#fde68a;line-height:1;display:block}
+.slide-badge-text{font-size:8px;color:rgba(255,255,255,.8);letter-spacing:1.5px;text-transform:uppercase;font-weight:700}
+.slide-emoji-wrap{position:absolute;right:20px;bottom:0;font-size:72px;opacity:.25;z-index:1;pointer-events:none;line-height:1}
+/* Dots */
+.hero-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:10}
+.hero-dot{width:5px;height:5px;border-radius:3px;background:rgba(255,255,255,.35);cursor:pointer;transition:all .3s}
+.hero-dot.active{width:16px;background:#fff}
+/* Arrows */
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);backdrop-filter:blur(4px);border:none;color:#fff;width:28px;height:28px;border-radius:50%;font-size:16px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background .2s;line-height:1}
+.hero-arrow:hover{background:rgba(255,255,255,.3)}
+.hero-arrow-left{left:10px}
+.hero-arrow-right{right:10px}
+.btn-white{background:linear-gradient(135deg,#fff,#f5f8ff);color:var(--primary-dark);border:none;padding:11px 26px;border-radius:var(--radius);font-weight:800;font-size:13px;font-family:'Nunito',sans-serif;transition:all .2s}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:11px 26px;border-radius:var(--radius);font-weight:700;font-size:13px;font-family:'Nunito',sans-serif;transition:all .2s}
+
+/* ─── TRUST BADGES ─── */
+.trust-strip{display:flex;align-items:center;justify-content:space-around;background:#fff;border-radius:10px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.07);padding:18px 12px;border:1px solid #eef2ff;gap:8px;flex-wrap:nowrap;overflow-x:auto}
+.trust-item{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;padding:0 16px;text-align:center;position:relative}
+.trust-item:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);height:36px;width:1px;background:var(--border)}
+.trust-icon-wrap{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.ti-blue{background:linear-gradient(135deg,#e8f0fe,#c7d9fd)}
+.ti-green{background:linear-gradient(135deg,#e8f5e9,#c8e6c9)}
+.ti-orange{background:linear-gradient(135deg,#fff3e0,#ffe0b2)}
+.ti-purple{background:linear-gradient(135deg,#f3e5f5,#e1bee7)}
+.ti-gold{background:linear-gradient(135deg,#fff8e1,#ffe082)}
+.trust-info strong{display:block;font-size:13px;font-weight:800;color:var(--text);line-height:1.3}
+.trust-info span{font-size:11px;color:var(--text3);margin-top:2px;display:block}
+
+/* ─── SECTION HEADER ─── */
+.sec-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.sec-title{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.sec-title::before{content:'';display:block;width:4px;height:20px;background:var(--primary);border-radius:2px}
+.view-all{font-size:13px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:4px}
+.view-all:hover{text-decoration:underline}
+
+/* ─── CATEGORY CIRCLES ─── */
+.cat-circles-wrap{background:#fff;border-radius:10px;padding:20px 16px 16px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.07);border:1px solid #eef2ff}
+.cat-circles{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;justify-content:space-around}
+.cat-circles::-webkit-scrollbar{display:none}
+.cat-circle{display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;flex-shrink:0;padding:0 12px;transition:transform .25s}
+.cat-circle:hover{transform:translateY(-4px)}
+.circle-ring{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;transition:all .3s;box-shadow:0 4px 14px rgba(0,0,0,.10)}
+.circle-ring::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;transition:all .3s}
+.cat-circle:hover .circle-ring::after,.cat-circle.active .circle-ring::after{border-color:var(--primary-bright);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.circle-emoji{font-size:30px;z-index:1;position:relative}
+.circle-label{font-size:12px;font-weight:800;color:var(--text);text-align:center;white-space:nowrap;letter-spacing:.2px}
+.circle-sub{font-size:10px;color:var(--text3);margin-top:-6px;text-align:center}
+/* Circle color themes */
+.cc-all{background:linear-gradient(135deg,#e8f0fe,#c7d9fd)}
+.cc-skin{background:linear-gradient(135deg,#fef9e7,#fde8c8)}
+.cc-cosm{background:linear-gradient(135deg,#fce4ec,#f8bbd0)}
+.cc-women{background:linear-gradient(135deg,#f3e5f5,#e1bee7)}
+.cc-men{background:linear-gradient(135deg,#e3f2fd,#bbdefb)}
+.cc-whole{background:linear-gradient(135deg,#e8f5e9,#c8e6c9)}
+.cc-frag{background:linear-gradient(135deg,#fff8e1,#ffe082)}
+.cc-hair{background:linear-gradient(135deg,#e0f7fa,#b2ebf2)}
+
+/* ─── PRODUCT GRID ─── */
+.products-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:24px}
+.product-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:all .28s;position:relative;display:flex;flex-direction:column}
+.product-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);border-color:#c0d0f0}
+.prod-img-box{position:relative;aspect-ratio:1/1;background:linear-gradient(135deg,#f8f9ff,#f0f4ff);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.prod-emoji{font-size:72px;transition:transform .3s}
+.product-card:hover .prod-emoji{transform:scale(1.08)}
+.prod-badge{position:absolute;top:8px;left:8px;font-size:9px;font-weight:800;padding:3px 8px;border-radius:3px;letter-spacing:.5px;text-transform:uppercase}
+.badge-new{background:#2874f0;color:#fff}
+.badge-hot{background:#ff6161;color:#fff}
+.badge-sale{background:#ff9f00;color:#fff}
+.badge-wholesale{background:#26a541;color:#fff}
+.badge-trending{background:#9c27b0;color:#fff}
+.prod-wishlist{position:absolute;top:8px;right:8px;background:#fff;border:1px solid var(--border);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:14px;opacity:0;transition:opacity .2s;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.product-card:hover .prod-wishlist{opacity:1}
+.prod-body{padding:12px;flex:1;display:flex;flex-direction:column}
+.prod-cat{font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.prod-name{font-size:13px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:8px;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prod-rating{display:flex;align-items:center;gap:4px;margin-bottom:8px}
+.rating-box{background:var(--green);color:#fff;font-size:10px;font-weight:800;padding:2px 6px;border-radius:3px;display:flex;align-items:center;gap:2px}
+.rating-count{font-size:10px;color:var(--text3)}
+.prod-price{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.price-now{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;color:var(--text)}
+.price-old{font-size:12px;color:var(--text3);text-decoration:line-through}
+.price-off{font-size:11px;font-weight:800;color:var(--secondary)}
+.prod-actions{display:flex;gap:6px}
+.btn-cart{flex:1;background:var(--primary-light);color:var(--primary);border:1.5px solid var(--primary);padding:8px;border-radius:var(--radius);font-size:12px;font-weight:800;transition:all .2s;font-family:'Nunito',sans-serif}
+.btn-cart:hover{background:var(--primary);color:#fff}
+.btn-wa{background:#25D366;color:#fff;border:none;padding:8px 10px;border-radius:var(--radius);font-size:14px;transition:background .2s;display:flex;align-items:center;justify-content:center}
+.btn-wa:hover{background:#1da854}
+
+/* ─── PROMO BANNERS ─── */
+.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.promo-card{border-radius:var(--radius);overflow:hidden;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;position:relative;cursor:pointer;transition:transform .25s}
+.promo-card:hover{transform:translateY(-2px)}
+.promo-card.skin{background:linear-gradient(135deg,#e8f5e9,#c8e6c9)}
+.promo-card.fashion{background:linear-gradient(135deg,#fce4ec,#f8bbd0)}
+.promo-card.men{background:linear-gradient(135deg,#e3f2fd,#bbdefb)}
+.promo-card.wholesale{background:linear-gradient(135deg,#fff3e0,#ffe0b2)}
+.promo-left .promo-tag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:6px}
+.promo-left h3{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;line-height:1.2;margin-bottom:6px;color:var(--text)}
+.promo-left p{font-size:12px;color:var(--text2);margin-bottom:14px}
+.btn-promo{background:var(--text);color:#fff;border:none;padding:9px 20px;border-radius:var(--radius);font-size:12px;font-weight:800;font-family:'Nunito',sans-serif;transition:opacity .2s}
+.btn-promo:hover{opacity:.8}
+.promo-emoji{font-size:60px;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(0,0,0,.1))}
+
+/* ─── WHOLESALE SECTION ─── */
+.wholesale-sec{background:#fff;border-radius:var(--radius);border:2px solid #26a541;padding:32px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 4px 16px rgba(38,165,65,.1)}
+.ws-left{}
+.ws-tag{display:inline-flex;align-items:center;gap:6px;background:#e8f5e9;color:#26a541;font-size:11px;font-weight:800;padding:4px 12px;border-radius:3px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:12px}
+.ws-left h2{font-family:'Poppins',sans-serif;font-size:24px;font-weight:700;color:var(--text);margin-bottom:8px}
+.ws-left p{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:16px;max-width:520px}
+.ws-perks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.ws-perk{background:#f1f8e9;border:1px solid #c5e1a5;color:#33691e;font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;display:flex;align-items:center;gap:5px}
+.ws-right{text-align:center;flex-shrink:0}
+.ws-disc-ring{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#26a541,#1b8c34);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(38,165,65,.3);margin:0 auto 12px}
+.ws-disc-num{font-family:'Poppins',sans-serif;font-size:32px;font-weight:800;color:#fff;line-height:1}
+.ws-disc-text{font-size:10px;color:rgba(255,255,255,.85);font-weight:700;letter-spacing:1px}
+.btn-ws{background:#26a541;color:#fff;border:none;padding:12px 32px;border-radius:var(--radius);font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+.btn-ws:hover{background:#1b8c34}
+
+/* ─── REVIEWS ─── */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.review-card{background:#fff;border-radius:var(--radius);padding:20px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.rev-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.rev-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;flex-shrink:0}
+.rev-info strong{display:block;font-size:13px;font-weight:800}
+.rev-info span{font-size:11px;color:var(--text3)}
+.rev-stars{color:#ffa534;font-size:12px;margin-bottom:8px}
+.rev-verified{font-size:10px;color:var(--green);font-weight:700;display:flex;align-items:center;gap:3px;margin-bottom:8px}
+.rev-text{font-size:13px;color:var(--text2);line-height:1.6}
+.rev-tag{display:inline-block;background:#f0f5ff;color:var(--primary);font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;margin-top:8px}
+
+/* ─── CART DRAWER ─── */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:2000;opacity:0;pointer-events:none;transition:opacity .3s}
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:380px;max-width:100vw;background:#fff;z-index:2001;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-4px 0 32px rgba(0,0,0,.12)}
+.cart-drawer.open{transform:translateX(0)}
+.cart-head{background:var(--header-bg);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.cart-head h3{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;display:flex;align-items:center;gap:8px}
+.cart-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.cart-close:hover{background:rgba(255,255,255,.35)}
+.cart-items{flex:1;overflow-y:auto;padding:16px}
+.cart-empty-state{text-align:center;padding:48px 20px}
+.cart-empty-state .empty-icon{font-size:56px;margin-bottom:12px}
+.cart-empty-state p{font-size:14px;color:var(--text3);font-weight:600}
+.cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.ci-thumb{width:64px;height:64px;background:#f0f4ff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0}
+.ci-info{flex:1}
+.ci-name{font-size:13px;font-weight:700;line-height:1.4;margin-bottom:4px}
+.ci-price{font-size:15px;font-weight:800;color:var(--primary);margin-bottom:8px}
+.ci-controls{display:flex;align-items:center;justify-content:space-between}
+.qty-wrap{display:flex;align-items:center;gap:0;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.qty-btn{width:28px;height:28px;background:#f5f5f5;border:none;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:background .2s}
+.qty-btn:hover{background:#e0e0e0}
+.qty-num{width:32px;text-align:center;font-size:13px;font-weight:800;border-left:1px solid var(--border);border-right:1px solid var(--border);height:28px;line-height:28px}
+.ci-del{background:none;border:none;color:#bbb;font-size:18px;cursor:pointer;padding:2px 4px;transition:color .2s}
+.ci-del:hover{color:#f44336}
+.cart-foot{padding:16px;border-top:2px solid var(--border);background:#fafafa}
+.cart-subtotal{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.cart-subtotal span{font-size:14px;color:var(--text2);font-weight:600}
+.cart-subtotal strong{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:var(--text)}
+.checkout-btn{width:100%;background:#25D366;border:none;color:#fff;padding:14px;border-radius:var(--radius);font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;letter-spacing:.3px}
+.checkout-btn:hover{background:#1da854}
+.cart-note{text-align:center;font-size:11px;color:var(--text3);margin-top:10px}
+
+/* ─── MOBILE MENU ─── */
+.mob-nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:3000;opacity:0;pointer-events:none;transition:opacity .3s}
+.mob-nav-overlay.open{opacity:1;pointer-events:all}
+.mob-nav-drawer{position:fixed;top:0;left:0;bottom:0;width:280px;background:#fff;z-index:3001;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.mob-nav-drawer.open{transform:translateX(0)}
+.mob-nav-head{background:var(--header-bg);color:#fff;padding:20px 16px;display:flex;align-items:center;justify-content:space-between}
+.mob-nav-head h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700}
+.mob-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer}
+.mob-nav-list{list-style:none;padding:8px 0}
+.mob-nav-list li a{display:flex;align-items:center;gap:14px;padding:14px 20px;font-size:14px;font-weight:700;color:var(--text);border-bottom:1px solid #f5f5f5;transition:background .2s}
+.mob-nav-list li a:hover{background:#f0f5ff;color:var(--primary)}
+.mob-nav-list li a .nav-em{font-size:20px}
+
+/* ─── FOOTER ─── */
+.footer{background:#0a1828;color:#ccc;margin-top:0}
+.footer-top{padding:40px 24px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;max-width:1280px;margin:0 auto}
+.foot-brand .foot-logo{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:10px}
+.foot-brand p{font-size:13px;line-height:1.8;margin-bottom:16px;color:#9aa8bc}
+.foot-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 20px;border-radius:var(--radius);font-size:13px;font-weight:700;transition:background .2s}
+.foot-wa:hover{background:#1da854}
+.foot-col h4{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#fff;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid rgba(201,168,76,.5)}
+.foot-col ul{list-style:none}
+.foot-col ul li{margin-bottom:8px}
+.foot-col ul li a{font-size:13px;color:#9aa8bc;transition:color .2s;display:flex;align-items:center;gap:6px}
+.foot-col ul li a:hover{color:#fff}
+.foot-col ul li a::before{content:'›';color:#2874f0;font-size:16px}
+.footer-bottom{background:#0f1921;padding:14px 24px;text-align:center;font-size:12px;color:#666;display:flex;align-items:center;justify-content:space-between;max-width:100%}
+
+/* ─── TOAST ─── */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#323232;color:#fff;padding:12px 24px;border-radius:var(--radius);font-size:13px;font-weight:700;z-index:9999;transition:transform .35s cubic-bezier(.4,0,.2,1);white-space:nowrap;box-shadow:0 4px 16px rgba(0,0,0,.3);display:flex;align-items:center;gap:8px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.success{background:#26a541}
+.toast.cart{background:#2874f0}
+
+/* ─── HAMBURGER ─── */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:1px;transition:all .3s}
+
+/* ─── SECTION WRAP ─── */
+.section-wrap{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:16px;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+
+/* ─── RECENTLY VIEWED ─── */
+.rec-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.rec-scroll::-webkit-scrollbar{display:none}
+.rec-card{flex-shrink:0;width:130px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .25s;cursor:pointer}
+.rec-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.rec-img{height:90px;background:#f0f4ff;display:flex;align-items:center;justify-content:center;font-size:40px}
+.rec-body{padding:8px}
+.rec-name{font-size:11px;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rec-price{font-size:13px;font-weight:800;color:var(--text)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+  .products-grid{grid-template-columns:repeat(4,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .products-grid{grid-template-columns:repeat(3,1fr)}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
+  .promo-grid{grid-template-columns:1fr}
+  .wholesale-sec{flex-direction:column;text-align:center}
+  .ws-perks{justify-content:center}
+  .trust-strip{gap:4px;padding:14px 8px}
+  .trust-item{padding:0 10px}
+  .trust-icon-wrap{width:44px;height:44px;font-size:18px}
+}
+@media(max-width:640px){
+  .topbar{height:54px;padding:0 12px;gap:8px}
+  .tb-logo .logo-text{font-size:18px}
+  .tb-logo .logo-sub{display:none}
+  .tb-search{display:none}
+  .tb-wa span{display:none}
+  .hamburger{display:flex}
+  .tb-btn span:not(.badge){display:none}
+  .navstrip{display:none;top:54px}
+  .main-wrap{padding:10px}
+  .hero-banner{height:200px}
+  .hero-slides{height:200px}
+  .hero-slide{height:200px;padding:20px 16px}
+  .slide-emoji-wrap{font-size:56px;opacity:.15}
+  .slide-title{font-size:20px}
+  .slide-sub{font-size:10px;-webkit-line-clamp:2}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .trust-strip{grid-template-columns:1fr 1fr;font-size:12px}
+  .reviews-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:6px}
+  .ws-right{width:100%}
+  .promo-emoji{font-size:40px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<header class="topbar">
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="hamburger" onclick="toggleMobNav()" id="hamburgerBtn">
+      <span></span><span></span><span></span>
+    </div>
+    <a href="#" class="tb-logo">
+      <div>
+        <div class="logo-text">Olin<span>buy</span></div>
+        <div class="logo-sub">India's Best Store</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="tb-search">
+    <input type="text" id="searchInput" placeholder="Search skincare, fashion, cosmetics..." oninput="handleSearch(this.value)">
+    <button onclick="handleSearch(document.getElementById('searchInput').value)">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Search
+    </button>
+  </div>
+
+  <div class="tb-right">
+    <a href="https://wa.me/919690914734" target="_blank" class="tb-wa">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp Order</span>
+    </a>
+    <button class="tb-btn" onclick="toggleCart()">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span>Cart</span>
+      <span class="badge" id="cartBadge">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- CATEGORY NAV STRIP -->
+<nav class="navstrip">
+  <div class="nav-item active" onclick="filterByNav(this,'all')"><span class="nav-emoji">🏠</span>Home</div>
+  <div class="nav-item" onclick="filterByNav(this,'skincare')"><span class="nav-emoji">✨</span>Skincare</div>
+  <div class="nav-item" onclick="filterByNav(this,'cosmetics')"><span class="nav-emoji">💄</span>Cosmetics</div>
+  <div class="nav-item" onclick="filterByNav(this,'women')"><span class="nav-emoji">👗</span>Women</div>
+  <div class="nav-item" onclick="filterByNav(this,'men')"><span class="nav-emoji">👔</span>Men</div>
+  <div class="nav-item" onclick="filterByNav(this,'wholesale')"><span class="nav-emoji">📦</span>Wholesale</div>
+  <div class="nav-item" onclick="filterByNav(this,'fragrance')"><span class="nav-emoji">🌸</span>Fragrance</div>
+  <div class="nav-item" onclick="filterByNav(this,'haircare')"><span class="nav-emoji">💇</span>Hair Care</div>
+</nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="toggleMobNav()"></div>
+<div class="mob-nav-drawer" id="mobNavDrawer">
+  <div class="mob-nav-head">
+    <h3>Olinbuy Menu</h3>
+    <button class="mob-close" onclick="toggleMobNav()">✕</button>
+  </div>
+  <ul class="mob-nav-list">
+    <li><a href="#" onclick="filterByNav(null,'all');toggleMobNav()"><span class="nav-em">🏠</span> Home</a></li>
+    <li><a href="#" onclick="filterByNav(null,'skincare');toggleMobNav()"><span class="nav-em">✨</span> Skincare</a></li>
+    <li><a href="#" onclick="filterByNav(null,'cosmetics');toggleMobNav()"><span class="nav-em">💄</span> Cosmetics</a></li>
+    <li><a href="#" onclick="filterByNav(null,'women');toggleMobNav()"><span class="nav-em">👗</span> Women's Fashion</a></li>
+    <li><a href="#" onclick="filterByNav(null,'men');toggleMobNav()"><span class="nav-em">👔</span> Men's Fashion</a></li>
+    <li><a href="#" onclick="filterByNav(null,'wholesale');toggleMobNav()"><span class="nav-em">📦</span> Wholesale</a></li>
+    <li><a href="https://wa.me/919690914734" target="_blank"><span class="nav-em">📲</span> WhatsApp Order</a></li>
+  </ul>
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="main-wrap" id="mainContent">
+
+  <!-- CATEGORY CIRCLES (TOP) -->
+  <div class="cat-circles-wrap" id="catCirclesWrap">
+    <div class="cat-circles" id="catCircles">
+      <div class="cat-circle active" onclick="setCatCircle(this,'all')">
+        <div class="circle-ring cc-all"><span class="circle-emoji">🛍️</span></div>
+        <span class="circle-label">All</span>
+        <span class="circle-sub">24 items</span>
+      </div>
+      <div class="cat-circle" onclick="setCatCircle(this,'skincare')">
+        <div class="circle-ring cc-skin"><span class="circle-emoji">✨</span></div>
+        <span class="circle-label">Skincare</span>
+        <span class="circle-sub">6 items</span>
+      </div>
+      <div class="cat-circle" onclick="setCatCircle(this,'cosmetics')">
+        <div class="circle-ring cc-cosm"><span class="circle-emoji">💄</span></div>
+        <span class="circle-label">Cosmetics</span>
+        <span class="circle-sub">5 items</span>
+      </div>
+      <div class="cat-circle" onclick="setCatCircle(this,'women')">
+        <div class="circle-ring cc-women"><span class="circle-emoji">👗</span></div>
+        <span class="circle-label">Women</span>
+        <span class="circle-sub">5 items</span>
+      </div>
+      <div class="cat-circle" onclick="setCatCircle(this,'men')">
+        <div class="circle-ring cc-men"><span class="circle-emoji">👔</span></div>
+        <span class="circle-label">Men</span>
+        <span class="circle-sub">4 items</span>
+      </div>
+      <div class="cat-circle" onclick="setCatCircle(this,'wholesale')">
+        <div class="circle-ring cc-whole"><span class="circle-emoji">📦</span></div>
+        <span class="circle-label">Wholesale</span>
+        <span class="circle-sub">4 items</span>
+      </div>
+      <div class="cat-circle" onclick="setCatCircle(this,'fragrance')">
+        <div class="circle-ring cc-frag"><span class="circle-emoji">🌸</span></div>
+        <span class="circle-label">Fragrance</span>
+        <span class="circle-sub">Coming</span>
+      </div>
+      <div class="cat-circle" onclick="setCatCircle(this,'haircare')">
+        <div class="circle-ring cc-hair"><span class="circle-emoji">💇</span></div>
+        <span class="circle-label">Hair Care</span>
+        <span class="circle-sub">Coming</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    <div class="announce-inner">
+      <span>🚚 FREE DELIVERY PAN-INDIA ON ORDERS ABOVE ₹999</span>
+      <span>✨ NEW ARRIVALS — SKINCARE, FASHION & MORE</span>
+      <span>📦 WHOLESALE AVAILABLE — MOQ ₹2000</span>
+      <span>💰 COD AVAILABLE ACROSS INDIA</span>
+      <span>🚚 FREE DELIVERY PAN-INDIA ON ORDERS ABOVE ₹999</span>
+      <span>✨ NEW ARRIVALS — SKINCARE, FASHION & MORE</span>
+      <span>📦 WHOLESALE AVAILABLE — MOQ ₹2000</span>
+      <span>💰 COD AVAILABLE ACROSS INDIA</span>
+    </div>
+  </div>
+
+  <!-- HERO BANNER -->
+  <div class="hero-banner" id="heroBanner">
+    <div class="hero-slides" id="heroSlides">
+
+      <!-- Slide 1 — Skincare -->
+      <div class="hero-slide hero-slide-1 active">
+        <div class="slide-left">
+          <div class="slide-tag">✦ New Arrivals 2025</div>
+          <div class="slide-title">Glowing Skin,<br><span class="hl">Confident You</span></div>
+          <div class="slide-sub">Premium skincare — serums, moisturizers, SPF & more. Authentic products, pan-India delivery.</div>
+          <div class="slide-btns">
+            <button class="slide-btn-primary" onclick="setCatCircle(null,'skincare');scrollToProducts()">Shop Skincare →</button>
+            <a href="https://wa.me/919690914734" target="_blank" class="slide-btn-outline">📲 Order Now</a>
+          </div>
+        </div>
+        <div class="slide-badge">
+          <span class="slide-badge-num">50%</span>
+          <span class="slide-badge-text">Upto Off</span>
+        </div>
+        <div class="slide-emoji-wrap">✨</div>
+      </div>
+
+      <!-- Slide 2 — Cosmetics -->
+      <div class="hero-slide hero-slide-2">
+        <div class="slide-left">
+          <div class="slide-tag">💄 Beauty Collection</div>
+          <div class="slide-title">Bold Looks,<br><span class="hl2">Real You</span></div>
+          <div class="slide-sub">Lipsticks, foundations, eye shadows & more. Long-lasting formulas at unbeatable prices.</div>
+          <div class="slide-btns">
+            <button class="slide-btn-primary" onclick="setCatCircle(null,'cosmetics');scrollToProducts()">Shop Cosmetics →</button>
+            <a href="https://wa.me/919690914734" target="_blank" class="slide-btn-outline">📲 Order Now</a>
+          </div>
+        </div>
+        <div class="slide-badge">
+          <span class="slide-badge-num">42%</span>
+          <span class="slide-badge-text">Upto Off</span>
+        </div>
+        <div class="slide-emoji-wrap">💄</div>
+      </div>
+
+      <!-- Slide 3 — Fashion -->
+      <div class="hero-slide hero-slide-3">
+        <div class="slide-left">
+          <div class="slide-tag">👗 Fashion 2025</div>
+          <div class="slide-title">Dress to<br><span class="hl3">Impress</span></div>
+          <div class="slide-sub">Men's & Women's fashion — kurtis, shirts, co-ord sets & more. Latest trends, best prices.</div>
+          <div class="slide-btns">
+            <button class="slide-btn-primary" onclick="setCatCircle(null,'women');scrollToProducts()">Shop Fashion →</button>
+            <a href="https://wa.me/919690914734" target="_blank" class="slide-btn-outline">📲 Order Now</a>
+          </div>
+        </div>
+        <div class="slide-badge">
+          <span class="slide-badge-num">39%</span>
+          <span class="slide-badge-text">Upto Off</span>
+        </div>
+        <div class="slide-emoji-wrap">👗</div>
+      </div>
+
+      <!-- Slide 4 — Wholesale -->
+      <div class="hero-slide hero-slide-4">
+        <div class="slide-left">
+          <div class="slide-tag">📦 Wholesale Program</div>
+          <div class="slide-title">Grow Your<br><span class="hl4">Business</span></div>
+          <div class="slide-sub">Bulk orders at best rates. MOQ ₹2,000 se shuru. Retailers, resellers & boutique owners welcome.</div>
+          <div class="slide-btns">
+            <button class="slide-btn-primary" onclick="setCatCircle(null,'wholesale');scrollToProducts()">Wholesale Inquiry →</button>
+            <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%27m%20interested%20in%20Wholesale." target="_blank" class="slide-btn-outline">📲 WhatsApp</a>
+          </div>
+        </div>
+        <div class="slide-badge">
+          <span class="slide-badge-num">30%</span>
+          <span class="slide-badge-text">Bulk Off</span>
+        </div>
+        <div class="slide-emoji-wrap">📦</div>
+      </div>
+
+      <!-- Navigation -->
+      <button class="hero-arrow hero-arrow-left" onclick="changeSlide(-1)">‹</button>
+      <button class="hero-arrow hero-arrow-right" onclick="changeSlide(1)">›</button>
+      <div class="hero-dots" id="heroDots">
+        <div class="hero-dot active" onclick="goToSlide(0)"></div>
+        <div class="hero-dot" onclick="goToSlide(1)"></div>
+        <div class="hero-dot" onclick="goToSlide(2)"></div>
+        <div class="hero-dot" onclick="goToSlide(3)"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST BADGES -->
+  <div class="trust-strip">
+    <div class="trust-item">
+      <div class="trust-icon-wrap ti-blue">🚚</div>
+      <div class="trust-info"><strong>Free Delivery</strong><span>Same-day delivery</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap ti-green">✅</div>
+      <div class="trust-info"><strong>100% Original</strong><span>Quality guaranteed</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap ti-orange">💰</div>
+      <div class="trust-info"><strong>Cash on Delivery</strong><span>COD available</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap ti-purple">🔄</div>
+      <div class="trust-info"><strong>Easy Returns</strong><span>7-day policy</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap ti-gold">⭐</div>
+      <div class="trust-info"><strong>4.8★ Rated</strong><span>2000+ customers</span></div>
+    </div>
+  </div>
+
+  <!-- PROMO BANNERS -->
+  <div class="promo-grid" id="promoBanners">
+    <div class="promo-card skin" onclick="filterByNav(null,'skincare')">
+      <div class="promo-left">
+        <div class="promo-tag">Up to 50% Off</div>
+        <h3>Skincare &<br>Beauty Deals</h3>
+        <p>Serums, moisturizers, SPF & more</p>
+        <button class="btn-promo">Shop Skincare</button>
+      </div>
+      <div class="promo-emoji">🌿</div>
+    </div>
+    <div class="promo-card fashion" onclick="filterByNav(null,'women')">
+      <div class="promo-left">
+        <div class="promo-tag">New Collection</div>
+        <h3>Women's<br>Fashion 2025</h3>
+        <p>Kurtis, dresses, co-ords & more</p>
+        <button class="btn-promo">Shop Women</button>
+      </div>
+      <div class="promo-emoji">👗</div>
+    </div>
+    <div class="promo-card men" onclick="filterByNav(null,'men')">
+      <div class="promo-left">
+        <div class="promo-tag">Trending Now</div>
+        <h3>Men's Style<br>Essentials</h3>
+        <p>Shirts, kurtas, trousers & more</p>
+        <button class="btn-promo">Shop Men</button>
+      </div>
+      <div class="promo-emoji">👔</div>
+    </div>
+    <div class="promo-card wholesale" onclick="filterByNav(null,'wholesale')">
+      <div class="promo-left">
+        <div class="promo-tag">Bulk Savings</div>
+        <h3>Wholesale<br>Program</h3>
+        <p>Upto 30% off on bulk orders</p>
+        <button class="btn-promo">Wholesale Inquiry</button>
+      </div>
+      <div class="promo-emoji">📦</div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="section-wrap" id="productsSection">
+    <div class="sec-header">
+      <div class="sec-title" id="gridTitle">All Products</div>
+      <div id="productCount" style="font-size:13px;color:var(--text3);font-weight:600"></div>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+
+  <!-- WHOLESALE -->
+  <div class="wholesale-sec" id="wholesaleSection">
+    <div class="ws-left">
+      <div class="ws-tag">📦 For Retailers & Resellers</div>
+      <h2>Wholesale Program — Grow Your Business</h2>
+      <p>Skincare, cosmetics aur fashion ke liye bulk orders pe best rates. MOQ sirf ₹2,000 se shuru. Punjab-wide delivery, COD available.</p>
+      <div class="ws-perks">
+        <span class="ws-perk">✅ MOQ ₹2,000 se shuru</span>
+        <span class="ws-perk">✅ Up to 30% Bulk Discount</span>
+        <span class="ws-perk">✅ COD Available</span>
+        <span class="ws-perk">✅ All Categories</span>
+        <span class="ws-perk">✅ Punjab-wide Delivery</span>
+        <span class="ws-perk">✅ Dedicated Support</span>
+      </div>
+      <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%27m%20interested%20in%20your%20Wholesale%20Program." target="_blank" class="btn-ws">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp pe Wholesale Inquiry Karo
+      </a>
+    </div>
+    <div class="ws-right">
+      <div class="ws-disc-ring">
+        <span class="ws-disc-num">30%</span>
+        <span class="ws-disc-text">BULK OFF</span>
+      </div>
+      <p style="font-size:13px;color:var(--text3);line-height:1.7;max-width:180px;margin:0 auto">Retailers, boutique owners & online resellers welcome!</p>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="section-wrap">
+    <div class="sec-header">
+      <div class="sec-title">Customer Reviews</div>
+      <span style="font-size:13px;color:var(--text3);font-weight:600">4.8 ★ Overall Rating</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="rev-top">
+          <div class="rev-avatar" style="background:#2874f0">P</div>
+          <div class="rev-info"><strong>Priya Sharma</strong><span>Mohali, Punjab</span></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-verified">✔ Verified Purchase</div>
+        <p class="rev-text">Skincare products bilkul original mile aur delivery same day ho gayi! Price bhi market se sasta tha. Bahut khush hoon 😊</p>
+        <span class="rev-tag">Skincare</span>
+      </div>
+      <div class="review-card">
+        <div class="rev-top">
+          <div class="rev-avatar" style="background:#26a541">R</div>
+          <div class="rev-info"><strong>Rajan Malhotra</strong><span>Chandigarh</span></div>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-verified">✔ Verified Purchase</div>
+        <p class="rev-text">Wholesale order ₹18,000 ka kiya — sab products genuine the, packing bhi acha tha. Ab main regular wholesale customer hoon!</p>
+        <span class="rev-tag">Wholesale</span>
+      </div>
+      <div class="review-card">
+        <div class="rev-top">
+          <div class="rev-avatar" style="background:#ff6161">H</div>
+          <div class="rev-info"><strong>Harjeet Singh</strong><span>Kharar, Punjab</span></div>
+        </div>
+        <div class="rev-stars">★★★★☆</div>
+        <div class="rev-verified">✔ Verified Purchase</div>
+        <p class="rev-text">Men's kurta collection bahut acchi hai. WhatsApp pe order karna bahut easy tha — turant reply aaya aur order confirm hua.</p>
+        <span class="rev-tag">Men's Fashion</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main-wrap -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="foot-brand">
+      <div class="foot-logo">🛍️ Olinbuy</div>
+      <p>India ka trusted online fashion & beauty store. Skincare, cosmetics, men's & women's fashion aur wholesale — sab kuch ek jagah. Pan-India delivery, best prices, Mohali se operate karta hai.</p>
+      <a href="https://wa.me/919690914734" target="_blank" class="foot-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order on WhatsApp
+      </a>
+    </div>
+    <div class="foot-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#">Skincare</a></li>
+        <li><a href="#">Cosmetics</a></li>
+        <li><a href="#">Women's Fashion</a></li>
+        <li><a href="#">Men's Fashion</a></li>
+        <li><a href="#">Wholesale</a></li>
+        <li><a href="#">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">How to Order</a></li>
+        <li><a href="#">Delivery Info</a></li>
+        <li><a href="#">Return Policy</a></li>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">📍 Shahi Majra, Mohali, Punjab (Pan-India Delivery)</a></li>
+        <li><a href="https://wa.me/919690914734">📲 +91 9690914734 (WhatsApp)</a></li>
+        <li><a href="#">🕐 Mon–Sat: 10am–8pm</a></li>
+        <li><a href="#">🕐 Sunday: 11am–6pm</a></li>
+        <li><a href="#">💳 COD Available</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Olinbuy — All rights reserved.</span>
+    <span>Pan-India Delivery | Based in Mohali, Punjab 🇮🇳</span>
+  </div>
+</footer>
+
+<!-- CART OVERLAY + DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>🛒 My Cart</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty-state">
+      <div class="empty-icon">🛒</div>
+      <p>Your cart is empty<br>Add products to get started!</p>
+    </div>
+  </div>
+  <div class="cart-foot" id="cartFoot" style="display:none">
+    <div class="cart-subtotal"><span>Subtotal</span><strong id="cartTotal">₹0</strong></div>
+    <button class="checkout-btn" onclick="checkoutWA()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp pe Order Karo
+    </button>
+    <p class="cart-note">💰 COD Available &nbsp;•&nbsp; 🚚 Free Delivery across India</p>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Added to cart!</div>
+
+<script>
+// ══════════════════════════════════════
+// PRODUCT DATA
+// ══════════════════════════════════════
+const PRODUCTS = [
+  {id:1,name:'Vitamin C Brightening Face Serum',cat:'skincare',price:549,original:999,badge:'sale',emoji:'🌟',rating:4.6,reviews:243,desc:'20% Vitamin C, Glow formula'},
+  {id:2,name:'SPF 50 Sunscreen Matte Gel',cat:'skincare',price:399,original:699,badge:'hot',emoji:'☀️',rating:4.5,reviews:187,desc:'PA+++ broad spectrum'},
+  {id:3,name:'Niacinamide 10% + Zinc Toner',cat:'skincare',price:449,original:749,badge:'new',emoji:'💧',rating:4.7,reviews:312,desc:'Pore minimizing formula'},
+  {id:4,name:'Hyaluronic Acid Moisturizer',cat:'skincare',price:649,original:1199,badge:'hot',emoji:'🫧',rating:4.8,reviews:421,desc:'Deep 24hr hydration'},
+  {id:5,name:'Retinol Night Repair Cream',cat:'skincare',price:799,original:1499,badge:'new',emoji:'🌙',rating:4.6,reviews:156,desc:'Anti-aging, brightening'},
+  {id:6,name:'Face Wash Foam Cleanser',cat:'skincare',price:299,original:499,badge:'sale',emoji:'🧴',rating:4.4,reviews:289,desc:'Gentle daily cleanser'},
+  {id:7,name:'Rose Gold Matte Lipstick Set',cat:'cosmetics',price:349,original:599,badge:'hot',emoji:'💄',rating:4.7,reviews:534,desc:'6 shades combo pack'},
+  {id:8,name:'HD Foundation + Concealer Kit',cat:'cosmetics',price:899,original:1599,badge:'new',emoji:'🎨',rating:4.5,reviews:198,desc:'Matte finish, 8 shades'},
+  {id:9,name:'18-Color Eye Shadow Palette',cat:'cosmetics',price:549,original:899,badge:'trending',emoji:'👁️',rating:4.6,reviews:367,desc:'Highly pigmented'},
+  {id:10,name:'Waterproof Kajal + Eyeliner',cat:'cosmetics',price:199,original:349,badge:'hot',emoji:'✏️',rating:4.8,reviews:612,desc:'24hr stay formula'},
+  {id:11,name:'Setting Spray & Primer Kit',cat:'cosmetics',price:699,original:1199,badge:'new',emoji:'✨',rating:4.4,reviews:145,desc:'All-day makeup lock'},
+  {id:12,name:'Women\'s Floral Print Kurti',cat:'women',price:749,original:1299,badge:'new',emoji:'👘',rating:4.6,reviews:234,desc:'Premium cotton, S–XXL'},
+  {id:13,name:'Co-ord Set — Palazzo + Top',cat:'women',price:1099,original:1899,badge:'trending',emoji:'👗',rating:4.7,reviews:189,desc:'Multiple colors available'},
+  {id:14,name:'Embroidered Party Wear Kurti',cat:'women',price:1299,original:2199,badge:'new',emoji:'🎀',rating:4.8,reviews:97,desc:'Festive collection 2025'},
+  {id:15,name:'Women\'s Casual T-Shirt Pack (3)',cat:'women',price:599,original:999,badge:'sale',emoji:'👚',rating:4.5,reviews:276,desc:'Cotton, 5 color options'},
+  {id:16,name:'Women\'s Leggings + Dupatta Set',cat:'women',price:799,original:1399,badge:'hot',emoji:'🌺',rating:4.4,reviews:311,desc:'Breathable fabric'},
+  {id:17,name:'Men\'s Slim Fit Formal Shirt',cat:'men',price:649,original:1099,badge:'new',emoji:'👔',rating:4.6,reviews:342,desc:'All sizes S–XXL'},
+  {id:18,name:'Men\'s Ethnic Kurta Pajama',cat:'men',price:999,original:1699,badge:'hot',emoji:'🧥',rating:4.7,reviews:178,desc:'Festive & casual wear'},
+  {id:19,name:'Men\'s Joggers + T-Shirt Set',cat:'men',price:799,original:1299,badge:'trending',emoji:'🩳',rating:4.5,reviews:223,desc:'Premium cotton blend'},
+  {id:20,name:'Men\'s Casual Chinos',cat:'men',price:899,original:1499,badge:'sale',emoji:'👖',rating:4.6,reviews:198,desc:'Stretch fit, 4 colors'},
+  {id:21,name:'Wholesale Skincare Bundle (24 pcs)',cat:'wholesale',price:2999,original:5999,badge:'wholesale',emoji:'📦',rating:4.9,reviews:87,desc:'MOQ: 1 bundle = 24 pcs'},
+  {id:22,name:'Wholesale Cosmetics Combo Pack',cat:'wholesale',price:3999,original:7999,badge:'wholesale',emoji:'🗃️',rating:4.8,reviews:64,desc:'Lips, eyes & base set'},
+  {id:23,name:'Wholesale Women\'s Kurti (12 pcs)',cat:'wholesale',price:4499,original:8999,badge:'wholesale',emoji:'🏷️',rating:4.7,reviews:43,desc:'Assorted sizes & colors'},
+  {id:24,name:'Wholesale Men\'s Shirt (10 pcs)',cat:'wholesale',price:3499,original:6999,badge:'wholesale',emoji:'📫',rating:4.8,reviews:55,desc:'Mixed sizes, formal range'},
+];
+
+let cart = [];
+let currentFilter = 'all';
+
+// ══════════════════════════════════════
+// RENDER PRODUCTS
+// ══════════════════════════════════════
+function renderProducts(list) {
+  const grid = document.getElementById('productsGrid');
+  document.getElementById('productCount').textContent = list.length + ' products found';
+  if (!list.length) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text3)">
+      <div style="font-size:48px;margin-bottom:12px">🔍</div>
+      <p style="font-size:15px;font-weight:700">Koi product nahi mila</p>
+      <p style="font-size:13px;margin-top:6px">Search term change karke try karo</p>
+    </div>`;
+    return;
+  }
+  grid.innerHTML = list.map(p => `
+    <div class="product-card">
+      <div class="prod-img-box">
+        <span class="prod-emoji">${p.emoji}</span>
+        <span class="prod-badge badge-${p.badge}">${p.badge==='wholesale'?'Wholesale':p.badge==='trending'?'Trending':p.badge.toUpperCase()}</span>
+        <div class="prod-wishlist" onclick="wishlist(${p.id})">🤍</div>
+      </div>
+      <div class="prod-body">
+        <div class="prod-cat">${p.cat==='wholesale'?'Wholesale':p.cat==='skincare'?'Skincare':p.cat==='cosmetics'?'Cosmetics':p.cat==='women'?"Women's":p.cat==="men"?"Men's":p.cat}</div>
+        <div class="prod-name">${p.name}</div>
+        <div class="prod-rating">
+          <span class="rating-box">★ ${p.rating}</span>
+          <span class="rating-count">(${p.reviews})</span>
+        </div>
+        <div class="prod-price">
+          <span class="price-now">₹${p.price.toLocaleString('en-IN')}</span>
+          <span class="price-old">₹${p.original.toLocaleString('en-IN')}</span>
+          <span class="price-off">${Math.round((1-p.price/p.original)*100)}% off</span>
+        </div>
+        <div class="prod-actions">
+          <button class="btn-cart" onclick="addToCart(${p.id})">+ Add to Cart</button>
+          <button class="btn-wa" onclick="orderNow(${p.id})" title="Order on WhatsApp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ══════════════════════════════════════
+// FILTER LOGIC
+// ══════════════════════════════════════
+function setCatCircle(el, cat) {
+  document.querySelectorAll('.cat-circle').forEach(c=>c.classList.remove('active'));
+  if(el) el.classList.add('active');
+  setCat(null, cat);
+}
+
+function setCat(el, cat) {
+  currentFilter = cat;
+  const titles = {all:'All Products',skincare:'Skincare',cosmetics:'Cosmetics',women:"Women's Fashion",men:"Men's Fashion",wholesale:'Wholesale',fragrance:'Fragrance',haircare:'Hair Care'};
+  document.getElementById('gridTitle').textContent = titles[cat]||cat;
+  const filtered = cat==='all' ? PRODUCTS : PRODUCTS.filter(p=>p.cat===cat);
+  renderProducts(filtered);
+}
+
+function filterByNav(el, cat) {
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  if(el) el.classList.add('active');
+  // Sync circles
+  document.querySelectorAll('.cat-circle').forEach(c=>{
+    const fn = c.getAttribute('onclick')||'';
+    c.classList.toggle('active', fn.includes(`'${cat}'`));
+  });
+  currentFilter = cat;
+  const titles = {all:'All Products',skincare:'Skincare',cosmetics:'Cosmetics',women:"Women's Fashion",men:"Men's Fashion",wholesale:'Wholesale',fragrance:'Fragrance',haircare:'Hair Care'};
+  document.getElementById('gridTitle').textContent = titles[cat]||cat;
+  const filtered = cat==='all' ? PRODUCTS : PRODUCTS.filter(p=>p.cat===cat);
+  renderProducts(filtered);
+  const isHome = cat==='all';
+  document.getElementById('heroBanner').style.display = isHome?'':'none';
+  document.getElementById('promoBanners').style.display = isHome?'':'none';
+  document.getElementById('wholesaleSection').style.display = (isHome||cat==='wholesale')?'':'none';
+  if(!isHome) document.getElementById('productsSection').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function handleSearch(val) {
+  const q = val.trim().toLowerCase();
+  if (!q) { renderProducts(PRODUCTS); document.getElementById('gridTitle').textContent='All Products'; return; }
+  const filtered = PRODUCTS.filter(p=>p.name.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q));
+  document.getElementById('gridTitle').textContent = `Search: "${val}"`;
+  renderProducts(filtered);
+}
+
+function scrollToProducts() {
+  document.getElementById('productsSection').scrollIntoView({behavior:'smooth'});
+}
+
+// ══════════════════════════════════════
+// CART
+// ══════════════════════════════════════
+function addToCart(id) {
+  const p = PRODUCTS.find(x=>x.id===id);
+  const ex = cart.find(x=>x.id===id);
+  if(ex) ex.qty++;
+  else cart.push({...p,qty:1});
+  updateCartUI();
+  showToast('🛒 '+p.name.substring(0,25)+'... cart mein add hua!','cart');
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(x=>x.id!==id);
+  updateCartUI();
+  renderCartItems();
+}
+
+function changeQty(id, d) {
+  const item = cart.find(x=>x.id===id);
+  if(!item) return;
+  item.qty += d;
+  if(item.qty<=0){ removeFromCart(id); return; }
+  updateCartUI();
+  renderCartItems();
+}
+
+function updateCartUI() {
+  const count = cart.reduce((s,i)=>s+i.qty,0);
+  document.getElementById('cartBadge').textContent = count;
+  renderCartItems();
+}
+
+function renderCartItems() {
+  const el = document.getElementById('cartItems');
+  const foot = document.getElementById('cartFoot');
+  if(!cart.length){
+    el.innerHTML=`<div class="cart-empty-state"><div class="empty-icon">🛒</div><p>Cart is empty!<br>Add products to get started.</p></div>`;
+    foot.style.display='none'; return;
+  }
+  foot.style.display='block';
+  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('cartTotal').textContent='₹'+total.toLocaleString('en-IN');
+  el.innerHTML = cart.map(i=>`
+    <div class="cart-item">
+      <div class="ci-thumb">${i.emoji}</div>
+      <div class="ci-info">
+        <div class="ci-name">${i.name}</div>
+        <div class="ci-price">₹${i.price.toLocaleString('en-IN')}</div>
+        <div class="ci-controls">
+          <div class="qty-wrap">
+            <button class="qty-btn" onclick="changeQty(${i.id},-1)">−</button>
+            <span class="qty-num">${i.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${i.id},+1)">+</button>
+          </div>
+          <button class="ci-del" onclick="removeFromCart(${i.id})">🗑</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function checkoutWA() {
+  if(!cart.length) return;
+  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const lines = cart.map(i=>`• ${i.name} ×${i.qty} = ₹${(i.price*i.qty).toLocaleString('en-IN')}`).join('\n');
+  const msg = `Hello Olinbuy! 🛍️\n\nMera Order:\n${lines}\n\n*Total: ₹${total.toLocaleString('en-IN')}*\n\nPlease confirm karein. COD chahiye.`;
+  window.open('https://wa.me/919690914734?text='+encodeURIComponent(msg),'_blank');
+}
+
+function orderNow(id) {
+  const p = PRODUCTS.find(x=>x.id===id);
+  const msg = `Hello Olinbuy! 🛍️\n\nMujhe ye product chahiye:\n*${p.name}*\nPrice: ₹${p.price}\n\nPlease confirm karein.`;
+  window.open('https://wa.me/919690914734?text='+encodeURIComponent(msg),'_blank');
+}
+
+function wishlist(id) {
+  const p = PRODUCTS.find(x=>x.id===id);
+  showToast('❤️ '+p.name.substring(0,22)+'... wishlist mein add hua!','success');
+}
+
+// ══════════════════════════════════════
+// TOGGLES
+// ══════════════════════════════════════
+function toggleCart(){
+  document.getElementById('cartDrawer').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+}
+function toggleMobNav(){
+  document.getElementById('mobNavDrawer').classList.toggle('open');
+  document.getElementById('mobNavOverlay').classList.toggle('open');
+}
+
+// ══════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════
+function showToast(msg,type=''){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='toast'+(type?' '+type:'');
+  t.classList.add('show');
+  clearTimeout(t._tid);
+  t._tid=setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// ══════════════════════════════════════
+// HERO SLIDER
+// ══════════════════════════════════════
+let currentSlide = 0;
+const totalSlides = 4;
+let slideTimer;
+
+function goToSlide(n) {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = (n + totalSlides) % totalSlides;
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
+
+function changeSlide(dir) {
+  clearInterval(slideTimer);
+  goToSlide(currentSlide + dir);
+  startSliderAuto();
+}
+
+function startSliderAuto() {
+  slideTimer = setInterval(() => goToSlide(currentSlide + 1), 4000);
+}
+
+startSliderAuto();
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+renderProducts(PRODUCTS);
+</script>
+</body>
+</html>
