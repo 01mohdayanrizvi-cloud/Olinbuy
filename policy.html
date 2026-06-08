@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olinbuy — Policies</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#f0f2f5;color:#1a1a2e;font-size:14px}
+a{text-decoration:none;color:inherit}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#0a1628 0%,#0f2444 60%,#1a3a6b 100%);padding:0 28px;height:66px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 4px 24px rgba(10,22,40,.6);border-bottom:1px solid rgba(201,168,76,.2)}
+.logo-wrap{display:flex;flex-direction:column;gap:1px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#fff;letter-spacing:1px;line-height:1}
+.logo em{color:#c9a84c;font-style:normal}
+.logo-sub{font-size:9px;color:rgba(201,168,76,.85);letter-spacing:3px;text-transform:uppercase;font-weight:600}
+.back-btn{display:flex;align-items:center;gap:7px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.35);color:#e8d5a3;padding:9px 18px;border-radius:6px;font-size:12px;font-weight:600;letter-spacing:.5px;transition:all .25s}
+.back-btn:hover{background:rgba(201,168,76,.22);color:#fde68a}
+
+/* ── TAB NAV ── */
+.tab-nav{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:66px;z-index:199;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.tab-inner{display:flex;overflow-x:auto;scrollbar-width:none;max-width:1100px;margin:0 auto;padding:0 20px}
+.tab-inner::-webkit-scrollbar{display:none}
+.tab-btn{display:flex;align-items:center;gap:7px;padding:14px 20px;font-size:12px;font-weight:600;color:#64748b;white-space:nowrap;border-bottom:3px solid transparent;cursor:pointer;transition:all .22s;letter-spacing:.3px}
+.tab-btn:hover{color:#0f2444;background:#f8faff}
+.tab-btn.active{color:#0f2444;border-bottom-color:#c9a84c;font-weight:700}
+.tab-btn .ticon{font-size:15px}
+/* Wholesale tab special */
+.tab-btn.wholesale-tab{color:#7a4100}
+.tab-btn.wholesale-tab.active{color:#5c2e00;border-bottom-color:#c9a84c;background:linear-gradient(180deg,#fffbf0,#fff)}
+
+/* ── CONTENT ── */
+.content{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
+.section{display:none}
+.section.active{display:block}
+
+/* ── HERO STRIP ── */
+.hero{border-radius:14px;padding:32px 36px;margin-bottom:22px;position:relative;overflow:hidden;color:#fff}
+.hero-ship{background:linear-gradient(125deg,#0a1628 0%,#0f2444 50%,#1a3a6b 100%)}
+.hero-return{background:linear-gradient(125deg,#1a0a2e 0%,#3b0764 50%,#6d28d9 100%)}
+.hero-payment{background:linear-gradient(125deg,#0a1a0a 0%,#14532d 50%,#166534 100%)}
+.hero-privacy{background:linear-gradient(125deg,#1a1a0a 0%,#422006 50%,#92400e 100%)}
+.hero-terms{background:linear-gradient(125deg,#0f0a1a 0%,#1e1b4b 50%,#312e81 100%)}
+.hero-wholesale{background:linear-gradient(125deg,#1a0a00 0%,#451a03 50%,#92400e 100%)}
+.hero::before{content:'';position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:rgba(201,168,76,.07)}
+.hero::after{content:'';position:absolute;right:60px;bottom:-60px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.04)}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.35);color:#fde68a;font-size:10px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:700;margin-bottom:8px;line-height:1.2;position:relative}
+.hero p{font-size:13px;opacity:.78;line-height:1.7;max-width:640px;position:relative}
+.hero-meta{font-size:11px;opacity:.5;margin-top:12px;letter-spacing:.5px}
+
+/* ── GRID LAYOUT ── */
+.policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.policy-grid.single{grid-template-columns:1fr}
+.policy-grid.triple{grid-template-columns:1fr 1fr 1fr}
+
+/* ── CARD ── */
+.card{background:#fff;border-radius:12px;padding:24px;border:1px solid #e8eef8;box-shadow:0 2px 12px rgba(0,0,0,.05);transition:box-shadow .25s}
+.card:hover{box-shadow:0 6px 24px rgba(0,0,0,.09)}
+.card-title{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:#0f2444;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #f0f4ff}
+.card-title .ct-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ct-blue{background:#e8f0fe}
+.ct-purple{background:#f3e8ff}
+.ct-green{background:#dcfce7}
+.ct-orange{background:#ffedd5}
+.ct-gold{background:#fef9c3}
+.ct-red{background:#fee2e2}
+.card p{font-size:13px;color:#475569;line-height:1.8;margin-bottom:10px}
+.card p:last-child{margin-bottom:0}
+.card strong{color:#1e293b;font-weight:700}
+
+/* ── LIST ── */
+ul.pl{list-style:none;margin:4px 0}
+ul.pl li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:13px;color:#475569;line-height:1.6}
+ul.pl li:last-child{border-bottom:none}
+ul.pl li .mk{flex-shrink:0;width:18px;text-align:center;font-weight:800;margin-top:1px}
+.mk.yes{color:#16a34a}
+.mk.no{color:#dc2626}
+.mk.dot{color:#0f2444;font-size:16px}
+.mk.warn{color:#d97706}
+.mk.num{background:#0f2444;color:#fff;width:20px;height:20px;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mk.gold{color:#c9a84c;font-size:16px}
+
+/* ── TABLE ── */
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tbl th{background:#0f2444;color:#fff;padding:12px 14px;font-size:12px;font-weight:700;text-align:left;letter-spacing:.5px}
+.tbl td{padding:11px 14px;font-size:13px;color:#475569;border-bottom:1px solid #f0f4ff}
+.tbl tr:nth-child(even) td{background:#f8faff}
+.tbl tr:hover td{background:#eff6ff}
+.badge{font-size:10px;font-weight:800;padding:3px 9px;border-radius:20px;display:inline-block;letter-spacing:.5px}
+.badge.fast{background:#dcfce7;color:#15803d}
+.badge.std{background:#dbeafe;color:#1d4ed8}
+.badge.gold{background:#fef9c3;color:#854d0e}
+
+/* ── ALERT BOXES ── */
+.alert{border-radius:10px;padding:14px 18px;margin:14px 0;display:flex;gap:12px;align-items:flex-start;border-left:4px solid}
+.alert .aico{font-size:20px;flex-shrink:0;margin-top:1px}
+.alert p{font-size:13px;font-weight:600;line-height:1.6;margin:0}
+.alert.green{background:#f0fdf4;border-color:#16a34a}.alert.green p{color:#14532d}
+.alert.blue{background:#eff6ff;border-color:#2563eb}.alert.blue p{color:#1e3a8a}
+.alert.orange{background:#fff7ed;border-color:#d97706}.alert.orange p{color:#7c2d12}
+.alert.red{background:#fef2f2;border-color:#dc2626}.alert.red p{color:#7f1d1d}
+.alert.gold{background:#fffbeb;border-color:#c9a84c}.alert.gold p{color:#78350f}
+
+/* ── PARTIAL COD BOX ── */
+.pcod-box{background:linear-gradient(135deg,#0a1628,#0f2444,#1a3a6b);border-radius:12px;padding:24px;margin:14px 0;color:#fff;position:relative;overflow:hidden}
+.pcod-box::after{content:'';position:absolute;right:-20px;top:-20px;width:100px;height:100px;border-radius:50%;background:rgba(201,168,76,.08)}
+.pcod-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#fde68a;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.pcod-steps{list-style:none}
+.pcod-steps li{display:flex;align-items:center;gap:12px;padding:9px 0;font-size:13px;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.88)}
+.pcod-steps li:last-child{border-bottom:none}
+.pnum{background:#c9a84c;color:#0a1628;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0}
+
+/* ── WHOLESALE SPECIAL ── */
+.ws-hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.ws-stat{background:#fff;border-radius:12px;padding:20px;text-align:center;border:1px solid #fde68a;box-shadow:0 2px 12px rgba(201,168,76,.12)}
+.ws-stat-num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#c9a84c;line-height:1;display:block}
+.ws-stat-label{font-size:12px;color:#78350f;font-weight:600;letter-spacing:.5px;margin-top:4px;text-transform:uppercase}
+.ws-tier{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e8eef8;box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:14px}
+.ws-tier-head{background:linear-gradient(135deg,#451a03,#92400e);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.ws-tier-head h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#fde68a}
+.ws-tier-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px}
+.ws-tier-body{padding:18px 20px}
+.ws-process{display:flex;gap:0;overflow-x:auto;margin:14px 0;padding-bottom:6px}
+.ws-step{flex:1;min-width:120px;text-align:center;position:relative;padding:0 8px}
+.ws-step::after{content:'→';position:absolute;right:-8px;top:20px;font-size:18px;color:#c9a84c;font-weight:700}
+.ws-step:last-child::after{display:none}
+.ws-step-icon{width:44px;height:44px;background:linear-gradient(135deg,#451a03,#92400e);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 8px}
+.ws-step-label{font-size:11px;font-weight:700;color:#451a03;text-align:center;line-height:1.4}
+
+/* ── FAQ ACCORDION ── */
+.faq-item{background:#fff;border-radius:10px;margin-bottom:10px;border:1px solid #e8eef8;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.04);transition:box-shadow .2s}
+.faq-item:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:600;color:#1e293b;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;user-select:none}
+.faq-q .ficon{color:#c9a84c;font-size:16px;flex-shrink:0}
+.faq-q .arr{color:#94a3b8;font-size:18px;transition:transform .25s;flex-shrink:0}
+.faq-item.open .faq-q .arr{transform:rotate(180deg)}
+.faq-item.open .faq-q{color:#0f2444;border-bottom:1px solid #f0f4ff}
+.faq-a{display:none;padding:14px 20px;font-size:13px;color:#475569;line-height:1.8;background:#fafbff}
+.faq-item.open .faq-a{display:block}
+
+/* ── CTA ── */
+.cta{background:linear-gradient(135deg,#0a1628,#0f2444,#1a3a6b);border-radius:14px;padding:32px;text-align:center;margin-top:24px;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,168,76,.1),transparent 70%)}
+.cta h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:8px}
+.cta p{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.7;position:relative}
+.wa-btn{display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;padding:13px 30px;border-radius:8px;font-size:14px;font-weight:700;letter-spacing:.5px;transition:all .25s;text-decoration:none;position:relative}
+.wa-btn:hover{background:#1da854;transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,.3)}
+.cta-note{font-size:11px;color:rgba(255,255,255,.4);margin-top:12px;letter-spacing:.5px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .header{padding:0 16px;height:60px}
+  .logo{font-size:20px}
+  .tab-btn{padding:12px 14px;font-size:11px;gap:5px}
+  .content{padding:16px 12px 60px}
+  .hero{padding:22px 20px}
+  .hero h1{font-size:20px}
+  .policy-grid,.policy-grid.triple{grid-template-columns:1fr}
+  .ws-hero-stats{grid-template-columns:repeat(3,1fr)}
+  .ws-stat-num{font-size:26px}
+  .card{padding:18px}
+  .cta{padding:24px 20px}
+  .ws-process{gap:4px}
+  .ws-step{min-width:90px}
+}
+@media(max-width:480px){
+  .ws-hero-stats{grid-template-columns:1fr}
+  .tab-btn span.tlabel{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="index.html" class="logo-wrap">
+    <span class="logo">Olin<em>buy</em></span>
+    <span class="logo-sub">India's Best Store</span>
+  </a>
+  <a href="index.html" class="back-btn">← Back to Shop</a>
+</header>
+
+<!-- TAB NAV -->
+<div class="tab-nav">
+  <div class="tab-inner">
+    <div class="tab-btn active" onclick="showTab('shipping',this)">
+      <span class="ticon">🚚</span><span class="tlabel">Shipping</span>
+    </div>
+    <div class="tab-btn" onclick="showTab('return',this)">
+      <span class="ticon">🔄</span><span class="tlabel">Return & Refund</span>
+    </div>
+    <div class="tab-btn" onclick="showTab('payment',this)">
+      <span class="ticon">💳</span><span class="tlabel">Payment</span>
+    </div>
+    <div class="tab-btn wholesale-tab" onclick="showTab('wholesale',this)">
+      <span class="ticon">📦</span><span class="tlabel">Wholesale</span>
+    </div>
+    <div class="tab-btn" onclick="showTab('privacy',this)">
+      <span class="ticon">🔒</span><span class="tlabel">Privacy</span>
+    </div>
+    <div class="tab-btn" onclick="showTab('terms',this)">
+      <span class="ticon">📋</span><span class="tlabel">Terms</span>
+    </div>
+    <div class="tab-btn" onclick="showTab('faq',this)">
+      <span class="ticon">❓</span><span class="tlabel">FAQ</span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- ════════ SHIPPING ════════ -->
+<div class="section active" id="shipping">
+  <div class="hero hero-ship">
+    <div class="hero-tag">✦ Olinbuy Policy</div>
+    <h1>Shipping & Delivery Policy</h1>
+    <p>We deliver quality products safely and swiftly across India. Complete transparency — no hidden charges, no surprises.</p>
+    <div class="hero-meta">📅 Effective: June 2025 &nbsp;|&nbsp; Olinbuy, Mohali, Punjab, India</div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-blue">⏱️</span>Delivery Timeframes</div>
+      <table class="tbl">
+        <tr><th>Location</th><th>Time</th><th>Type</th></tr>
+        <tr><td><strong>Mohali, Chandigarh, Kharar</strong></td><td>2–3 Business Days</td><td><span class="badge fast">Fast</span></td></tr>
+        <tr><td><strong>Punjab & Haryana</strong></td><td>3–5 Business Days</td><td><span class="badge fast">Fast</span></td></tr>
+        <tr><td><strong>Delhi, UP, HP, J&K</strong></td><td>4–7 Business Days</td><td><span class="badge std">Standard</span></td></tr>
+        <tr><td><strong>Rest of India</strong></td><td>7–10 Business Days</td><td><span class="badge std">Standard</span></td></tr>
+        <tr><td><strong>Remote & Hilly Areas</strong></td><td>10–12 Business Days</td><td><span class="badge std">Standard</span></td></tr>
+      </table>
+      <div class="alert blue"><span class="aico">ℹ️</span><p>Business days = Monday to Saturday, excluding public holidays. Orders placed after 5:00 PM will be processed the next business day. Order cut-off: 12:00 PM (Mon–Sat).</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-gold">💰</span>Shipping Charges</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span>Orders above ₹999 — <strong>FREE delivery pan-India</strong></li>
+        <li><span class="mk yes">✓</span>COD orders below ₹999 — Flat <strong>₹100</strong></li>
+        <li><span class="mk yes">✓</span>Online/UPI orders below ₹999 — Flat <strong>₹60</strong></li>
+        <li><span class="mk yes">✓</span>Wholesale orders (MOQ ₹2,000+) — <strong>Free delivery</strong></li>
+        <li><span class="mk yes">✓</span>No hidden charges — checkout price is final</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-green">📦</span>Order Processing</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span>Order confirmed on WhatsApp within <strong>2–4 hours</strong></li>
+        <li><span class="mk yes">✓</span>Processing & packing: <strong>1–3 business days</strong> after confirmation</li>
+        <li><span class="mk yes">✓</span>Tracking number shared via WhatsApp after dispatch</li>
+        <li><span class="mk yes">✓</span>All products quality-checked before shipping</li>
+        <li><span class="mk yes">✓</span>Packed with Olinbuy-sealed packaging for security</li>
+        <li><span class="mk dot">›</span>Batch IDs may vary by stock — products will always be 100% authentic</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-red">⚠️</span>Important Notes</div>
+      <ul class="pl">
+        <li><span class="mk dot">›</span>Delivery may delay <strong>2–3 extra days</strong> during festive seasons</li>
+        <li><span class="mk dot">›</span>Provide correct address & active phone number while ordering</li>
+        <li><span class="mk dot">›</span>Courier attempts delivery <strong>3 times</strong> if no one is available</li>
+        <li><span class="mk dot">›</span>If package arrives damaged — photograph before opening & WhatsApp us</li>
+        <li><span class="mk no">✗</span>Olinbuy not liable for delays by courier partners or natural events</li>
+        <li><span class="mk no">✗</span>No resale/bulk commercial purchase without Wholesale Agreement</li>
+      </ul>
+      <div class="alert red"><span class="aico">🎥</span><p>Record an unboxing video when receiving your order — Olinbuy seal must be visible. This is MANDATORY for any damage or wrong product complaint. No video = no claim.</p></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>Shipping Query?</h3>
+    <p>Contact us on WhatsApp for tracking, delivery updates, or any shipping issue. We respond within 2 hours.</p>
+    <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%20have%20a%20shipping%20query." class="wa-btn">📲 WhatsApp: +91 9690914734</a>
+    <div class="cta-note">Mon–Sat · 10:00 AM – 8:00 PM · Response within 2 hours</div>
+  </div>
+</div>
+
+<!-- ════════ RETURN & REFUND ════════ -->
+<div class="section" id="return">
+  <div class="hero hero-return">
+    <div class="hero-tag">✦ Olinbuy Policy</div>
+    <h1>Return & Refund Policy</h1>
+    <p>We stand behind every product. If something isn't right, we resolve it quickly and fairly. Your satisfaction is our commitment.</p>
+    <div class="hero-meta">📅 Effective: June 2025 &nbsp;|&nbsp; Return Window: 3 Days from Delivery</div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-green">✅</span>Valid Return Reasons</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span><strong>Wrong product delivered</strong> — full refund or free replacement</li>
+        <li><span class="mk yes">✓</span><strong>Damaged or defective product</strong> — full refund or replacement</li>
+        <li><span class="mk yes">✓</span><strong>Product significantly different from description</strong> — exchange or refund</li>
+        <li><span class="mk yes">✓</span><strong>Missing item(s) in order</strong> — replacement of missing items</li>
+        <li><span class="mk yes">✓</span>Partial returns accepted — return one or all items</li>
+      </ul>
+      <div class="alert red"><span class="aico">🎥</span><p>Unboxing video showing Olinbuy seal is MANDATORY for all claims. No video = claim rejected. Always record when first opening your package.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-red">✗</span>Non-Returnable Items</div>
+      <ul class="pl">
+        <li><span class="mk no">✗</span>Opened or used skincare & cosmetic products (hygiene policy)</li>
+        <li><span class="mk no">✗</span>Products with visible wear, use, or customer-caused damage</li>
+        <li><span class="mk no">✗</span>Return request after <strong>3 days</strong> of delivery date</li>
+        <li><span class="mk no">✗</span>Products without original packaging, seals, labels, or barcodes</li>
+        <li><span class="mk no">✗</span>Products with expiry within 6 months — unless wrong/damaged</li>
+        <li><span class="mk no">✗</span>Sale/discounted items — unless damaged or wrong</li>
+        <li><span class="mk no">✗</span>Wholesale orders — unless completely wrong product sent</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card policy-grid single">
+    <div class="card-title"><span class="ct-icon ct-blue">🔄</span>Return Process — Step by Step</div>
+    <ul class="pl">
+      <li><span class="mk num">1</span>WhatsApp us at <strong>+91 9690914734</strong> within <strong>3 days</strong> of delivery</li>
+      <li><span class="mk num">2</span>Share: Order ID + unboxing video (Olinbuy seal visible) + product photos with batch number</li>
+      <li><span class="mk num">3</span>Our team reviews claim within <strong>24 hours</strong> — approval or rejection notified</li>
+      <li><span class="mk num">4</span>If approved — return pickup arranged within <strong>3–4 business days</strong> (we bear cost)</li>
+      <li><span class="mk num">5</span>Damaged product sent to vendor for investigation</li>
+      <li><span class="mk num">6</span>Refund or replacement processed within <strong>5–7 business days</strong> of receiving product</li>
+    </ul>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-orange">❌</span>Cancellation Policy</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span>Cancellation allowed <strong>before dispatch only</strong></li>
+        <li><span class="mk yes">✓</span>Can cancel only <strong>after 3 hours</strong> of placing order</li>
+        <li><span class="mk no">✗</span>Once tracking updated or dispatched — <strong>cannot cancel</strong></li>
+        <li><span class="mk dot">›</span>If shipped, cancellation cannot be guaranteed</li>
+        <li><span class="mk warn">⚠</span>If cancelled but courier delivers — <strong>do NOT accept</strong> the package</li>
+        <li><span class="mk dot">›</span>Auto-refund if shipment returned due to non-delivery</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-green">💰</span>Refund Details</div>
+      <p>Approved refunds processed within <strong>5–7 business days</strong> after product received & inspected.</p>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span><strong>COD orders</strong> — Refund via UPI or Bank Transfer</li>
+        <li><span class="mk yes">✓</span><strong>UPI/Online</strong> — Refund to original payment source</li>
+        <li><span class="mk yes">✓</span><strong>Partial COD</strong> — 10% advance refunded to UPI/bank</li>
+        <li><span class="mk yes">✓</span>Exchange available if preferred over refund</li>
+        <li><span class="mk dot">›</span>Shipping charges (₹60–₹100) non-refundable unless Olinbuy's error</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>Want to Return a Product?</h3>
+    <p>WhatsApp us within 3 days with your order ID and unboxing video. All valid claims resolved within 24 hours.</p>
+    <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%20want%20to%20return%20a%20product." class="wa-btn">📲 Start Return Process</a>
+    <div class="cta-note">Mon–Sat · 10:00 AM – 8:00 PM · Claims reviewed within 24 hours</div>
+  </div>
+</div>
+
+<!-- ════════ PAYMENT ════════ -->
+<div class="section" id="payment">
+  <div class="hero hero-payment">
+    <div class="hero-tag">✦ Olinbuy Policy</div>
+    <h1>Payment Policy</h1>
+    <p>Flexible, secure, and fully transparent payment options. Designed to protect both our customers and our business.</p>
+    <div class="hero-meta">📅 Effective: June 2025</div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-green">💰</span>Payment Methods</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span><strong>Cash on Delivery (COD)</strong> — pan-India, up to ₹10,000</li>
+        <li><span class="mk yes">✓</span><strong>Partial COD</strong> — 10% advance + 90% on delivery</li>
+        <li><span class="mk yes">✓</span><strong>Full UPI</strong> — GPay, PhonePe, Paytm, BHIM, WhatsApp Pay</li>
+        <li><span class="mk yes">✓</span><strong>Bank Transfer</strong> (NEFT/IMPS) — wholesale orders above ₹5,000</li>
+        <li><span class="mk yes">✓</span><strong>Full Advance</strong> — priority dispatch within 24 hours</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-red">🔒</span>Payment Security</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span>All UPI transactions secured via RBI-regulated bank servers</li>
+        <li><span class="mk yes">✓</span>We never store card, UPI PIN, or banking details</li>
+        <li><span class="mk yes">✓</span>Official UPI ID shared only via WhatsApp: <strong>+91 9690914734</strong></li>
+        <li><span class="mk no">✗</span>We will <strong>NEVER</strong> ask for OTP, ATM PIN, or card number</li>
+        <li><span class="mk no">✗</span>Never share OTP with anyone claiming to be Olinbuy</li>
+      </ul>
+      <div class="alert red"><span class="aico">🚨</span><p>FRAUD ALERT: Olinbuy will NEVER ask for OTP, ATM PIN, or card details. Anyone asking is a scammer. Block and report immediately.</p></div>
+    </div>
+  </div>
+
+  <div class="card policy-grid single">
+    <div class="card-title"><span class="ct-icon ct-blue">🚚</span>Partial COD — How It Works</div>
+    <div class="pcod-box">
+      <div class="pcod-title">✦ Partial COD — Step by Step</div>
+      <ul class="pcod-steps">
+        <li><span class="pnum">1</span>Place your order on WhatsApp</li>
+        <li><span class="pnum">2</span>Pay <strong>10% advance via UPI</strong> to confirm your order</li>
+        <li><span class="pnum">3</span>We dispatch within <strong>1–3 business days</strong></li>
+        <li><span class="pnum">4</span>Pay remaining <strong>90% cash</strong> to the delivery person</li>
+        <li><span class="pnum">5</span>Order complete ✓</li>
+      </ul>
+    </div>
+    <div class="alert blue"><span class="aico">💡</span><p>Partial COD confirms genuine orders and keeps prices low for all customers. The 10% advance reduces fraudulent orders, allowing us to serve genuine buyers better and faster.</p></div>
+  </div>
+
+  <div class="cta">
+    <h3>Payment Issue?</h3>
+    <p>Contact us immediately on WhatsApp. All payment concerns resolved within 2 hours.</p>
+    <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%20have%20a%20payment%20query." class="wa-btn">📲 Resolve on WhatsApp</a>
+    <div class="cta-note">Mon–Sat · 10:00 AM – 8:00 PM · Emergency support available</div>
+  </div>
+</div>
+
+<!-- ════════ WHOLESALE ════════ -->
+<div class="section" id="wholesale">
+  <div class="hero hero-wholesale">
+    <div class="hero-tag">✦ Exclusive Program</div>
+    <h1>Wholesale Policy & Program</h1>
+    <p>Olinbuy's Wholesale Program is designed for serious retailers, resellers, and boutique owners. Best rates, genuine products, and dedicated support — built for business growth.</p>
+    <div class="hero-meta">📅 Effective: June 2025 &nbsp;|&nbsp; For Retailers, Resellers & Boutique Owners</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="ws-hero-stats">
+    <div class="ws-stat">
+      <span class="ws-stat-num">30%</span>
+      <span class="ws-stat-label">Max Bulk Discount</span>
+    </div>
+    <div class="ws-stat">
+      <span class="ws-stat-num">₹2K</span>
+      <span class="ws-stat-label">Min Order Value</span>
+    </div>
+    <div class="ws-stat">
+      <span class="ws-stat-num">3</span>
+      <span class="ws-stat-label">Categories Available</span>
+    </div>
+  </div>
+
+  <!-- Eligibility -->
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-gold">✅</span>Who Can Apply</div>
+      <ul class="pl">
+        <li><span class="mk gold">✦</span>Retail shop owners & boutique owners</li>
+        <li><span class="mk gold">✦</span>Online resellers (Instagram, WhatsApp, Meesho, etc.)</li>
+        <li><span class="mk gold">✦</span>Fashion & beauty entrepreneurs</li>
+        <li><span class="mk gold">✦</span>Event vendors & pop-up store owners</li>
+        <li><span class="mk gold">✦</span>Anyone with genuine intent to resell Olinbuy products</li>
+      </ul>
+      <div class="alert gold"><span class="aico">⚠️</span><p>Wholesale is strictly for authorized resellers only. Personal buyers misusing wholesale pricing will have their access revoked and orders cancelled without refund.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-orange">📦</span>Available Categories</div>
+      <ul class="pl">
+        <li><span class="mk gold">✦</span><strong>Skincare</strong> — Serums, moisturizers, SPF, toners, cleansers</li>
+        <li><span class="mk gold">✦</span><strong>Cosmetics</strong> — Lipsticks, foundations, eye shadows, kajal sets</li>
+        <li><span class="mk gold">✦</span><strong>Women's Fashion</strong> — Kurtis, co-ord sets, dresses, palazzo sets</li>
+        <li><span class="mk gold">✦</span><strong>Men's Fashion</strong> — Shirts, kurtas, trousers (select items)</li>
+        <li><span class="mk dot">›</span>Fragrance & Hair Care — coming soon for wholesale</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Payment Tiers -->
+  <div class="ws-tier">
+    <div class="ws-tier-head">
+      <h3>💳 Wholesale Payment Tiers</h3>
+      <span class="ws-tier-badge">Structured for Your Business</span>
+    </div>
+    <div class="ws-tier-body">
+      <table class="tbl">
+        <tr><th>Order Value</th><th>Payment Terms</th><th>Discount</th></tr>
+        <tr><td><strong>Up to ₹5,000</strong></td><td>COD or Full Advance</td><td><span class="badge fast">Up to 15%</span></td></tr>
+        <tr><td><strong>₹5,000 – ₹15,000</strong></td><td>50% Advance + 50% on Delivery</td><td><span class="badge std">Up to 20%</span></td></tr>
+        <tr><td><strong>₹15,000 – ₹50,000</strong></td><td>Full Advance via Bank Transfer</td><td><span class="badge gold">Up to 25%</span></td></tr>
+        <tr><td><strong>Above ₹50,000</strong></td><td>Full Advance — Negotiable Terms</td><td><span class="badge gold">Up to 30%</span></td></tr>
+      </table>
+      <div class="alert gold"><span class="aico">💡</span><p>All wholesale prices and discount slabs are confirmed via WhatsApp before order placement. Final pricing depends on category, quantity, and current stock availability.</p></div>
+    </div>
+  </div>
+
+  <!-- Order Process -->
+  <div class="card">
+    <div class="card-title"><span class="ct-icon ct-gold">🔄</span>Wholesale Order Process</div>
+    <div class="ws-process">
+      <div class="ws-step"><div class="ws-step-icon">📲</div><div class="ws-step-label">WhatsApp Inquiry</div></div>
+      <div class="ws-step"><div class="ws-step-icon">📋</div><div class="ws-step-label">Product & Price Confirmation</div></div>
+      <div class="ws-step"><div class="ws-step-icon">💰</div><div class="ws-step-label">Advance Payment</div></div>
+      <div class="ws-step"><div class="ws-step-icon">📦</div><div class="ws-step-label">Packing & Dispatch</div></div>
+      <div class="ws-step"><div class="ws-step-icon">✅</div><div class="ws-step-label">Delivery & Final Payment</div></div>
+    </div>
+  </div>
+
+  <!-- Wholesale Terms -->
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-gold">📜</span>Wholesale Terms</div>
+      <ul class="pl">
+        <li><span class="mk gold">✦</span>Minimum order value: <strong>₹2,000</strong></li>
+        <li><span class="mk gold">✦</span>Free delivery on all wholesale orders</li>
+        <li><span class="mk gold">✦</span>Bulk discount applied on confirmed orders only</li>
+        <li><span class="mk gold">✦</span>Product availability confirmed before payment</li>
+        <li><span class="mk gold">✦</span>Wholesale invoices provided on request</li>
+        <li><span class="mk gold">✦</span>Reorders get priority dispatch within 24 hours</li>
+        <li><span class="mk no">✗</span>Wholesale prices not applicable on individual/retail orders</li>
+        <li><span class="mk no">✗</span>No returns on wholesale orders — unless completely wrong product sent</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-orange">🚚</span>Wholesale Delivery</div>
+      <ul class="pl">
+        <li><span class="mk gold">✦</span>Free delivery on all wholesale orders</li>
+        <li><span class="mk gold">✦</span>Dispatched within <strong>2–4 business days</strong> after payment confirmation</li>
+        <li><span class="mk gold">✦</span>Tracking shared on WhatsApp after dispatch</li>
+        <li><span class="mk gold">✦</span>Pan-India delivery — all major cities covered</li>
+        <li><span class="mk gold">✦</span>Securely packed — bulk shipments use reinforced packaging</li>
+        <li><span class="mk dot">›</span>Delivery: 3–5 days (Punjab/nearby), 7–12 days (rest of India)</li>
+      </ul>
+      <div class="alert orange"><span class="aico">📸</span><p>Wholesale buyers MUST record an unboxing video upon receiving the shipment. Any damage or shortage claims require video proof — no exceptions.</p></div>
+    </div>
+  </div>
+
+  <!-- Wholesale Protection -->
+  <div class="card policy-grid single">
+    <div class="card-title"><span class="ct-icon ct-red">🛡️</span>Our Protection Policies — For Both Parties</div>
+    <div class="policy-grid">
+      <div>
+        <p><strong>Protecting You (Reseller):</strong></p>
+        <ul class="pl">
+          <li><span class="mk yes">✓</span>100% authentic products — all verified before dispatch</li>
+          <li><span class="mk yes">✓</span>If wrong product sent — full replacement at our cost</li>
+          <li><span class="mk yes">✓</span>Transparent pricing — no hidden charges</li>
+          <li><span class="mk yes">✓</span>Dedicated WhatsApp support for wholesale clients</li>
+          <li><span class="mk yes">✓</span>Invoice & documentation provided for business records</li>
+        </ul>
+      </div>
+      <div>
+        <p><strong>Protecting Olinbuy:</strong></p>
+        <ul class="pl">
+          <li><span class="mk dot">›</span>Advance payment required for orders above ₹5,000</li>
+          <li><span class="mk dot">›</span>No returns on wholesale unless wrong product sent</li>
+          <li><span class="mk dot">›</span>Unboxing video mandatory for any complaint</li>
+          <li><span class="mk dot">›</span>Orders confirmed only via WhatsApp — no verbal commitments</li>
+          <li><span class="mk dot">›</span>Unauthorized resale of Olinbuy-branded content prohibited</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>Ready to Start Wholesale?</h3>
+    <p>WhatsApp us with your business details and product requirements. Our wholesale team responds within 4 hours.</p>
+    <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%27m%20interested%20in%20your%20Wholesale%20Program.%20Please%20share%20details." class="wa-btn">📲 Start Wholesale Inquiry</a>
+    <div class="cta-note">Mon–Sat · 10:00 AM – 8:00 PM · Wholesale team responds within 4 hours</div>
+  </div>
+</div>
+
+<!-- ════════ PRIVACY ════════ -->
+<div class="section" id="privacy">
+  <div class="hero hero-privacy">
+    <div class="hero-tag">✦ Olinbuy Policy</div>
+    <h1>Privacy Policy</h1>
+    <p>Olinbuy is committed to protecting your personal information. We explain clearly what we collect, why we collect it, and how we use it.</p>
+    <div class="hero-meta">📅 Effective: June 2025 &nbsp;|&nbsp; Last Updated: June 2025</div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-blue">📋</span>What We Collect</div>
+      <p><strong>Directly from you:</strong></p>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span>Name & WhatsApp number — for order processing</li>
+        <li><span class="mk yes">✓</span>Delivery address — for shipping</li>
+        <li><span class="mk yes">✓</span>UPI transaction ID — for payment verification only</li>
+        <li><span class="mk yes">✓</span>WhatsApp chat history — for order records & support</li>
+      </ul>
+      <p style="margin-top:12px"><strong>Automatically from website:</strong></p>
+      <ul class="pl">
+        <li><span class="mk dot">›</span>Device type & browser (website optimization)</li>
+        <li><span class="mk dot">›</span>IP address & general location (security)</li>
+        <li><span class="mk dot">›</span>Pages visited (to improve experience)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-green">🔐</span>How We Use It</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span>To confirm, process, and deliver your orders</li>
+        <li><span class="mk yes">✓</span>To send order updates & tracking via WhatsApp</li>
+        <li><span class="mk yes">✓</span>To resolve returns, exchanges, or refund requests</li>
+        <li><span class="mk yes">✓</span>To send offers & new arrivals — <strong>only with consent</strong></li>
+        <li><span class="mk yes">✓</span>To detect and prevent fraud</li>
+        <li><span class="mk yes">✓</span>To comply with Indian laws and regulations</li>
+        <li><span class="mk yes">✓</span>To improve our products and customer experience</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-orange">🤝</span>When We Share Data</div>
+      <p>We share your data only when absolutely necessary:</p>
+      <ul class="pl">
+        <li><span class="mk dot">›</span><strong>Courier partners</strong> — name, address, phone only (for delivery)</li>
+        <li><span class="mk dot">›</span><strong>Payment processors</strong> — UPI platforms for secure transactions</li>
+        <li><span class="mk dot">›</span><strong>Legal requirements</strong> — Indian law, court order, or government authority</li>
+      </ul>
+      <div class="alert red"><span class="aico">🚫</span><p>We NEVER sell, rent, or share your personal data with advertisers, marketers, or any unauthorized third party.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-red">🚫</span>What We Never Do</div>
+      <ul class="pl">
+        <li><span class="mk no">✗</span>Sell, rent, or trade your personal data</li>
+        <li><span class="mk no">✗</span>Store card numbers, OTP, or banking credentials</li>
+        <li><span class="mk no">✗</span>Send unsolicited SMS spam</li>
+        <li><span class="mk no">✗</span>Share your contact without permission</li>
+        <li><span class="mk no">✗</span>Use data beyond order fulfillment & service improvement</li>
+        <li><span class="mk no">✗</span>Collect data from anyone under 18 years of age</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-gold">✏️</span>Your Rights</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span>Know exactly what personal data we hold about you</li>
+        <li><span class="mk yes">✓</span>Request correction of inaccurate information</li>
+        <li><span class="mk yes">✓</span>Request complete deletion of your data</li>
+        <li><span class="mk yes">✓</span>Opt out of promotional messages anytime</li>
+        <li><span class="mk yes">✓</span>Lodge a complaint about our data practices</li>
+        <li><span class="mk dot">›</span>To exercise any right — WhatsApp: <strong>+91 9690914734</strong></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-blue">🍪</span>Website & Security</div>
+      <p>Our website uses minimal browser localStorage to save cart items during your session only. This data stays on your device — nothing sent to our servers. No tracking cookies or ad pixels are used.</p>
+      <p style="margin-top:10px">We take reasonable security precautions to protect your data. However, no internet transmission is 100% secure. We recommend not sharing sensitive personal information over any platform unnecessarily.</p>
+      <div class="alert blue"><span class="aico">🔄</span><p>This Privacy Policy may be updated periodically. Continued use of Olinbuy after changes means you accept the updated policy.</p></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>Privacy Concern?</h3>
+    <p>Contact us to request data access, correction, or deletion. We respond within 24 hours.</p>
+    <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%20have%20a%20privacy%20concern." class="wa-btn">📲 Contact Us</a>
+  </div>
+</div>
+
+<!-- ════════ TERMS ════════ -->
+<div class="section" id="terms">
+  <div class="hero hero-terms">
+    <div class="hero-tag">✦ Olinbuy Policy</div>
+    <h1>Terms & Conditions</h1>
+    <p>By using Olinbuy's services or placing an order, you agree to these terms. They are fair and transparent for both parties.</p>
+    <div class="hero-meta">📅 Effective: June 2025 &nbsp;|&nbsp; Governing Law: Punjab, India</div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-blue">🛍️</span>About Olinbuy</div>
+      <ul class="pl">
+        <li><span class="mk dot">›</span>Olinbuy is an online retail store from Mohali, Punjab, India</li>
+        <li><span class="mk dot">›</span>We sell skincare, cosmetics, men's & women's fashion, and wholesale products</li>
+        <li><span class="mk dot">›</span>All orders confirmed via WhatsApp: <strong>+91 9690914734</strong></li>
+        <li><span class="mk dot">›</span>All prices in Indian Rupees (₹) inclusive of applicable taxes</li>
+        <li><span class="mk dot">›</span>We are an independent retailer — not affiliated with any specific brand</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-green">✅</span>Product Authenticity</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span>All products 100% authentic — sourced from verified vendors</li>
+        <li><span class="mk yes">✓</span>Every product verified before stocking</li>
+        <li><span class="mk yes">✓</span>Labeled with barcodes and batch numbers for traceability</li>
+        <li><span class="mk yes">✓</span>Quality-checked before every dispatch</li>
+        <li><span class="mk yes">✓</span>Sealed with Olinbuy packaging tape for security</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-orange">📦</span>Order Terms</div>
+      <ul class="pl">
+        <li><span class="mk yes">✓</span>Orders confirmed only after WhatsApp acknowledgment</li>
+        <li><span class="mk yes">✓</span>Right to cancel orders if stock unavailable (full refund given)</li>
+        <li><span class="mk yes">✓</span>Cancellation allowed before dispatch only</li>
+        <li><span class="mk no">✗</span>No cancellation once dispatched</li>
+        <li><span class="mk dot">›</span>Product images for reference — slight color variations possible</li>
+        <li><span class="mk no">✗</span>Bulk resale without Wholesale Agreement strictly prohibited</li>
+        <li><span class="mk dot">›</span>Olinbuy reserves right to refuse service at its discretion</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-red">⚖️</span>Liability Limitations</div>
+      <p>Olinbuy is not responsible for:</p>
+      <ul class="pl">
+        <li><span class="mk dot">›</span>Delays by courier partners or natural events</li>
+        <li><span class="mk dot">›</span>Damage from improper use by customer</li>
+        <li><span class="mk dot">›</span>Allergic reactions — always check ingredients before use</li>
+        <li><span class="mk dot">›</span>Non-delivery due to wrong address provided</li>
+        <li><span class="mk dot">›</span>Any indirect loss from use of our products</li>
+      </ul>
+      <div class="alert orange"><span class="aico">⚠️</span><p>For skincare & cosmetics — always do a patch test before full use. Consult a dermatologist if you have sensitive skin or known allergies.</p></div>
+    </div>
+  </div>
+
+  <div class="policy-grid">
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-gold">📜</span>Intellectual Property</div>
+      <p>All content on the Olinbuy website — including the Olinbuy name, logo, product descriptions, photography, and design — is the exclusive property of Olinbuy. Unauthorized copying, reproduction, or commercial use of any content is strictly prohibited and may result in legal action.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="ct-icon ct-blue">⚙️</span>Changes & Jurisdiction</div>
+      <p>Olinbuy reserves the right to update these Terms & Conditions at any time. The updated terms will be posted on this page with a revised effective date. Continued use of Olinbuy services after any update constitutes acceptance of the new terms.</p>
+      <div class="alert blue"><span class="aico">⚖️</span><p>Any disputes shall be subject to exclusive jurisdiction of courts in Mohali, Punjab, India. Indian law applies to all transactions.</p></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>Questions About Our Terms?</h3>
+    <p>We believe in full transparency. If anything is unclear, just ask — we'll explain it simply and honestly.</p>
+    <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%20have%20a%20question%20about%20your%20terms." class="wa-btn">📲 Ask Us Anything</a>
+  </div>
+</div>
+
+<!-- ════════ FAQ ════════ -->
+<div class="section" id="faq">
+  <div class="hero hero-ship">
+    <div class="hero-tag">✦ Quick Answers</div>
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about Olinbuy — ordering, payments, delivery, returns, and wholesale.</p>
+    <div class="hero-meta">📅 Updated: June 2025</div>
+  </div>
+
+  <div class="policy-grid single">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#0f2444;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #e8eef8">🛍️ About Olinbuy</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> What is Olinbuy?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Olinbuy is a trusted online fashion & beauty store from Mohali, Punjab. We sell skincare, cosmetics, men's & women's fashion, and wholesale products pan-India. All products are 100% authentic, quality-checked, and delivered fast.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> Are all products genuine?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Yes, absolutely. We personally source, verify, and quality-check every product before dispatch. All items are sealed with Olinbuy packaging tape, labeled with batch numbers and barcodes for full traceability.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> How do I place an order?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Simply WhatsApp us at +91 9690914734. Tell us the product name and your delivery address. We'll confirm availability, price, and process your order. Confirmation within 2–4 hours.</div>
+    </div>
+
+    <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#0f2444;margin:20px 0 14px;padding-bottom:8px;border-bottom:2px solid #e8eef8">💳 Payment</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> What payment options are available?</span><span class="arr">▾</span></div>
+      <div class="faq-a">We accept: Cash on Delivery (COD), Partial COD (10% advance + 90% on delivery), Full UPI payment (Google Pay, PhonePe, Paytm, BHIM, WhatsApp Pay), and Bank Transfer for wholesale orders above ₹5,000.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> What is Partial COD and why is it needed?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Partial COD means you pay just 10% advance online to confirm your order, and pay the remaining 90% cash when you receive delivery. This helps us confirm genuine orders, reduce fraud, and keep prices low for all customers.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> Is online payment safe?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Yes. All UPI transactions are processed through RBI-regulated secure bank servers. We never store your card details, OTP, or banking credentials. We will NEVER ask for your OTP or ATM PIN — if anyone does, it's a scam.</div>
+    </div>
+
+    <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#0f2444;margin:20px 0 14px;padding-bottom:8px;border-bottom:2px solid #e8eef8">🚚 Delivery</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> How long does delivery take?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Mohali/Chandigarh: 2–3 business days. Punjab/Haryana: 3–5 days. Delhi/UP/HP: 4–7 days. Rest of India: 7–10 days. Remote areas: 10–12 days. Tracking shared via WhatsApp after dispatch.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> Is delivery free?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Yes! Orders above ₹999 get free delivery pan-India. Below ₹999: ₹60 for online payment, ₹100 for COD. All wholesale orders (MOQ ₹2,000) always get free delivery.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> What if I miss the delivery?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Courier will attempt delivery 3 times. If all attempts fail, the shipment returns to us. Contact us on WhatsApp to arrange re-delivery. Re-delivery charges may apply for COD orders.</div>
+    </div>
+
+    <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#0f2444;margin:20px 0 14px;padding-bottom:8px;border-bottom:2px solid #e8eef8">🔄 Returns & Refunds</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> Can I return a product?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Yes, within 3 days of delivery — for wrong product, damaged/defective product, or product significantly different from description only. Opened skincare/cosmetics cannot be returned due to hygiene policy.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> What is needed to process a return?</span><span class="arr">▾</span></div>
+      <div class="faq-a">You need: (1) Order ID, (2) Unboxing video showing Olinbuy seal, (3) Product photos with batch number clearly visible. WhatsApp these within 3 days of delivery. Claims without unboxing video will not be processed.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> How long does refund take?</span><span class="arr">▾</span></div>
+      <div class="faq-a">5–7 business days after we receive and inspect the returned product. COD refunds via UPI/bank transfer. Online payment refunds go to original payment source.</div>
+    </div>
+
+    <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#0f2444;margin:20px 0 14px;padding-bottom:8px;border-bottom:2px solid #e8eef8">📦 Wholesale</div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> How do I start wholesale with Olinbuy?</span><span class="arr">▾</span></div>
+      <div class="faq-a">WhatsApp us at +91 9690914734 with: your name, business type, and which products you're interested in. Our wholesale team responds within 4 hours with pricing and terms.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> What is the minimum wholesale order?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Minimum order value is ₹2,000. Free delivery on all wholesale orders. Discounts range from 15% to 30% based on order value and category.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q"><span><span class="ficon">✦</span> Can I return wholesale orders?</span><span class="arr">▾</span></div>
+      <div class="faq-a">Wholesale orders are generally non-returnable. Exception: if completely wrong product is delivered — in that case, full replacement is provided at our cost. Unboxing video is mandatory for all wholesale claims.</div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>Still Have Questions?</h3>
+    <p>We're happy to help with anything. WhatsApp us and we'll respond within 2 hours during business hours.</p>
+    <a href="https://wa.me/919690914734?text=Hello%20Olinbuy!%20I%20have%20a%20question." class="wa-btn">📲 WhatsApp: +91 9690914734</a>
+    <div class="cta-note">Mon–Sat · 10:00 AM – 8:00 PM · Sunday 11:00 AM – 6:00 PM</div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<script>
+function showTab(tab, el) {
+  document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFaq(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>
